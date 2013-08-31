@@ -52,7 +52,7 @@ body {
         list-style: none;
         display: inline-block;
         width:300px;
-        bottom:30%;
+        bottom:5%;
         left: 50%;
     }
     .social li{float: left; margin: 0 10px 0 0;}
