@@ -47,7 +47,7 @@ body {
         left:-101%;
     }
     .social {
-        margin:50px auto 0;
+        margin:50px auto 20px;
         padding: 0;
         list-style: none;
         display: inline-block;
