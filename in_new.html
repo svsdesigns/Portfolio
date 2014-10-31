@@ -6,7 +6,7 @@
     <title>SVS Designs: Surendra Vikram Singh</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='//fonts.googleapis.com/css?family=Quicksand:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='css/style.css' rel='stylesheet' type='text/css'>
+    <!-- <link href='css/style.css' rel='stylesheet' type='text/css'> -->
 </head>
 
 <body>
@@ -20,10 +20,23 @@
    // Not supported
 }
 
-window.addEventListner("deviceorientation", function(event){
+var EventUtil = {
+
+    addHandler: function (element, type, handler) {
+        if (element.addEventListener) {
+            element.addEventListener(type, handler, false);
+        } else if (element.attachEvent) {
+            element.attachEvent("on" + type, handler);
+        } else {
+            element["on" + type] = handler;
+        }
+    }
+};
+
+EventUtil.addHandler(window, "deviceorientation", function(event){
     var output = document.getElementById("output");
     output.innerHTML = "Alpha=" + event.alpha + ", Beta=" + event.beta + ", Gamma=" + event.gamma + "<br>";
-}, false);
+});
 
 </script>
 </html>
