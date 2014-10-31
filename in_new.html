@@ -20,23 +20,32 @@
    // Not supported
 }
 
-var EventUtil = {
+// var EventUtil = {
 
-    addHandler: function (element, type, handler) {
-        if (element.addEventListener) {
-            element.addEventListener(type, handler, false);
-        } else if (element.attachEvent) {
-            element.attachEvent("on" + type, handler);
-        } else {
-            element["on" + type] = handler;
-        }
-    }
-};
+//     addHandler: function (element, type, handler) {
+//         if (element.addEventListener) {
+//             element.addEventListener(type, handler, false);
+//         } else if (element.attachEvent) {
+//             element.attachEvent("on" + type, handler);
+//         } else {
+//             element["on" + type] = handler;
+//         }
+//     }
+// };
 
-EventUtil.addHandler(window, "deviceorientation", function(event){
+// EventUtil.addHandler(window, "deviceorientation", function(event){
+//     var output = document.getElementById("output");
+//     output.innerHTML = "Alpha=" + event.alpha + ", Beta=" + event.beta + ", Gamma=" + event.gamma + "<br>";
+// });
+
+window.addEventListener("devicemotion", function(event){
     var output = document.getElementById("output");
-    output.innerHTML = "Alpha=" + event.alpha + ", Beta=" + event.beta + ", Gamma=" + event.gamma + "<br>";
-});
+    if (event.rotationRate !== null){
+        output.innerHTML += "Alpha=" + event.rotationRate.alpha + ", Beta=" + 
+                            event.rotationRate.beta + ", Gamma=" + 
+                            event.rotationRate.gamma;        
+    }
+}, false);
 
 </script>
 </html>
