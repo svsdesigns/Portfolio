@@ -25,7 +25,15 @@
 <div id="distance">asdasd</div>
 <script src="500px.js"></script>
 <script>
-  
+_500px.init({
+  sdk_key: 'b3cf6701a6a5014444ee58f00fa11afd54ae6356'
+});
+
+
+_500px.api('/photos', { feature: 'popular', page: 1 }, function (response) {
+  console.log(response.data.photos);
+});
+
 // Delegate Events in Javascript   
 /*var delegate = function(criteria, listener) {
   return function(e) {
@@ -128,14 +136,7 @@ toolbar.addEventListener("click", delegate(buttonsFilter, buttonHandler));
 
 // })();
 
-  _500px.init({
-    sdk_key: 'b3cf6701a6a5014444ee58f00fa11afd54ae6356'
-  });
 
-
-  _500px.api('/photos', { feature: 'popular', page: 1 }, function (response) {
-    console.log(response.data.photos);
-  });
 
 </script>
 </body>
