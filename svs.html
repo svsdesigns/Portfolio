@@ -23,7 +23,7 @@
 </ul>
 
 <div id="distance">asdasd</div>
-
+<script src="500px.js"></script>
 <script>
   
 // Delegate Events in Javascript   
@@ -69,70 +69,73 @@ toolbar.addEventListener("click", delegate(buttonsFilter, buttonHandler));
 //   });
 // };
 
-(function(){
+// (function(){
 
-  if(navigator.geolocation){
+//   if(navigator.geolocation){
     
 
-  }
-  else{
+//   }
+//   else{
 
-  }
+//   }
 
-    //var startData = [];
-    navigator.geolocation.getCurrentPosition(function(position){
+//     //var startData = [];
+//     navigator.geolocation.getCurrentPosition(function(position){
 
-     var startLat = position.coords.latitude, 
-         startLon = position.coords.longitude;
+//      var startLat = position.coords.latitude, 
+//          startLon = position.coords.longitude;
 
-         watch(startLat, startLon);
+//          watch(startLat, startLon);
 
-    }, function(error){
-      alert('Error Occurred! Error Code '+error.code);
-    });
+//     }, function(error){
+//       alert('Error Occurred! Error Code '+error.code);
+//     });
 
-    function watch(stLat, stLon) {
-      navigator.geolocation.watchPosition(function(position){
+//     function watch(stLat, stLon) {
+//       navigator.geolocation.watchPosition(function(position){
 
-        //var startLat = startData[0].startLat;
-        //var startLon = startData[0].startLon;
+//         var endLat = position.coords.latitude;
+//         var endLon = position.coords.longitude;
 
-        var endLat = position.coords.latitude;
-        var endLon = position.coords.longitude;
-
-
-        //return {'endLat': position.coords.latitude, 'endLon': position.coords.longitude}
-
-        var svs = distance(stLat, stLon, endLat, endLon);
+//         var svs = distance(stLat, stLon, endLat, endLon);
         
-        document.getElementById('distance').innerHTML = svs;
+//         document.getElementById('distance').innerHTML = svs;
         
         
 
-      });
-    }
+//       });
+//     }
 
-    function distance(lat1, lon1, lat2, lon2){
-      var R = 6371; // km
-      var dLat = (lat2 - lat1).toRad();
-      var dLon = (lon2 - lon1).toRad(); 
-      var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-              Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
-              Math.sin(dLon / 2) * Math.sin(dLon / 2); 
-      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); 
-      var d = R * c;
-      return d;
-  }
+//     function distance(lat1, lon1, lat2, lon2){
+//       var R = 6371; // km
+//       var dLat = (lat2 - lat1).toRad();
+//       var dLon = (lon2 - lon1).toRad(); 
+//       var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+//               Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
+//               Math.sin(dLon / 2) * Math.sin(dLon / 2); 
+//       var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); 
+//       var d = R * c;
+//       return d;
+//   }
 
-  Number.prototype.toRad = function() {
-    return this * Math.PI / 180;
-  }
+//   Number.prototype.toRad = function() {
+//     return this * Math.PI / 180;
+//   }
  
 
 
     
 
-})();
+// })();
+
+  _500px.init({
+    sdk_key: 'b3cf6701a6a5014444ee58f00fa11afd54ae6356'
+  });
+
+
+  _500px.api('/photos', { feature: 'popular', page: 1 }, function (response) {
+    console.log(response.data.photos);
+  });
 
 </script>
 </body>
