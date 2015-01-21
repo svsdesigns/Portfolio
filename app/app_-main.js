@@ -256,7 +256,7 @@
         webDesign.getProjects = function () {
 
             var user = 'svsdesigns',
-                apiKey = 'ZLBxK9rEfHwJf9K0rmseNr2fS2gS2HJW';
+                apiKey = 'Up1roNu2wpr0SAWvLkMkaE8d2sS2KWE1';
             q = $q.defer();
             $http({
                 method: 'jsonp',
