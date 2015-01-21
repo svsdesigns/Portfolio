@@ -67,7 +67,8 @@
 			},
 			build: {
 				files: {
-					'app/minappu.js': ['app/app_-main.js']
+					'app/minappu.js': ['app/app_-main.js'],
+					'500px/500px.min.js': ['app/500px.js']
 					//'scripts/head.min.js': ['scripts/head.js']
 				}
 			}

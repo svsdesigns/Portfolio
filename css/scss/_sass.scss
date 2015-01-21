@@ -71,13 +71,7 @@ $tab: 600;
 	transform: translate3d($x, $y, $z);
 }
 
-@mixin vendor-prefix($name, $argument) {
-  -webkit-#{$name}: #{$argument};
-  -ms-#{$name}: #{$argument};
-  -moz-#{$name}: #{$argument};
-  -o-#{$name}: #{$argument};
-  #{$name}: #{$argument};
-}
+
 
 /*
 	MEDIA QUERY
@@ -89,4 +83,13 @@ $tab: 600;
 	@media screen and (#{$constraint}-#{$feature}: $point / $docFontSize + em) {
 		@content;
 	}
+}
+
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
 }
