@@ -850,6 +850,7 @@ hr,
 }
 
 .image_wrapper {
+	min-height: 200px;
 	overflow: hidden;
 	position: relative;
 }

@@ -105,6 +105,9 @@
                 }
             });
 
+            // var imgBg = document.createElement('')
+            // document.body.appendChild('')
+
         }
         
     }])

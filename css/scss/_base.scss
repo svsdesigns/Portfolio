@@ -688,6 +688,7 @@ hr, .hr {
 }
 	.image_wrapper {
 	    //height: 243px;
+	    min-height: 200px;
 	    overflow: hidden;
 		position: relative;
 		img {
