@@ -1,0 +1,155 @@
+﻿
+/* ---------------------------------------- OOCSS ---------------------------------------- */
+
+/*  Reusable classes to be applied as modifiers to existing DOM elements
+	to reduce the amount of repetition in style declarations */
+
+
+/* --------------------------- Text size */
+.feature {
+	font-size: 1.313em; /* 21px */
+	line-height: 1.238; /* 26px */
+}
+.secondary {
+}
+.tertiary {
+}
+
+/* Uppercase Text */
+.uppercase {
+	text-transform: uppercase;
+}
+
+/* --------------------------- Color */
+.highlight {
+	color: #7b9f17;
+}
+.contrast {
+	color: #7b2a84;
+}
+.light {
+	color: #eeeae1;
+}
+.dark {
+	color: #000;
+}
+.reverse {
+	color: #fff;
+}
+
+/* --------------------------- Background */
+.bg_light {
+	background-color: #eeeae1;
+}
+.bg_reverse {
+	background-color: #fff;
+}
+
+/* --------------------------- Borders */
+.border_b {
+	border-bottom: 1px solid #666;
+}
+.border_t {
+	border-top: 1px solid #666;
+}
+.shadow {
+	@include box-shadow(0, 0, 5px, 3px, rgba(0,0,0,0.1));
+}
+
+/* --------------------------- Transitions */
+
+/*  Use as OOCSS class or add any additional selectors to each declaration */
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+            transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes tada {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+            transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+.tada {
+  -webkit-animation-name: tada;
+          animation-name: tada;
+}
+
+
+/*====================================Fade IN====================================*/
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+
+
+/*====================================Fade Out====================================*/
+
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+}

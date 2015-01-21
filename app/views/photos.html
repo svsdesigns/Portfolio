@@ -1,0 +1,35 @@
+<!-- Header -->
+<div class="hero_wrapper">
+    <div class="hero photo">
+        <div class="wrapper">
+            <h1>{{heading}}</h1>
+        </div>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+   <div class="wrapper">
+        <div class="row">
+            <div class="lap_1_3 tab_1_2" ng-repeat="photo in pics track by $index">
+                <div class="px item">
+                    
+                    <div class="image_wrapper">
+                        <img ng-src="{{photo.image_url}}" alt="{{photo.name}}">
+                        <a target="_blank" href="{{'http://www.500px.com'+photo.url}}" class="external"></a>
+                    </div>
+                    <div class="details">
+                        <h2>{{photo.name}}</h2>
+                        <ul>
+                            <li>Views <span>{{photo.times_viewed}}</span></li>
+                            <li>Likes <span>{{photo.votes_count}}</span></li>
+                            <li>Rating <span>{{photo.highest_rating}}</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div> 
+</div>
+

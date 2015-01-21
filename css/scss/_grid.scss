@@ -1,0 +1,139 @@
+﻿
+/* ---------------------------------------- Grid ---------------------------------------- */
+/* --------------------------- Wrapper */
+.wrapper {
+	margin: 0 auto;
+	padding: 0 1em;  /* 0 5px */
+	position: relative;
+	margin: 0 auto;
+	@include mq($lap) {
+		/*  .wrapper max-width is 20px more than site width to account for left/right gutters */
+		max-width: 97em; /* 970px */
+	}
+}
+
+
+
+	/* --------------------------- Rows */
+	.row {
+		margin-left: -1em; /* -10px */
+		
+	}
+	.row:before,
+	.row:after {
+		display: table;
+		content: '';
+		line-height: 0;
+	}
+	.row:after {
+		clear: both;
+	}
+
+	/* ie */
+	.lt_ie9 .row {
+		zoom: 1;
+	}
+
+	/* --------------------------- Columns */
+	[class*="lap_"],
+	[class*="desk_"],
+	[class*="tab_"] {
+		float: left;
+		min-height: 1px;
+		padding-left: 1em; /* 10px */
+		width: 100%;
+	}
+
+	.palm_1_2 {
+		width: 50%;
+
+	}
+
+	.palm_full {
+		width: 100%;
+	}
+
+	.push_palm_1_2 {
+		margin-left: 50%;
+	}
+
+@include mq($tab) {
+
+
+	.tab_1_6 {
+		width: 16.666666666666664%;
+	}
+	.tab_1_3 {
+		width: 33.33333333333333%;
+	}
+	.tab_1_2 {
+		width: 50%;
+	}
+	.tab_2_3 {
+		width: 66.66666666666666%;
+	}
+	.tab_5_6 {
+		width: 83.33333333333334%;
+	}
+	.tab_full {
+		width: 100%;
+	}
+
+	/* --------------------------- Offsets */
+	.push_tab_1_6 {
+	     margin-left: 16.666666666666664%;
+	}
+	.push_tab_1_3 {
+	     margin-left: 33.33333333333333%;
+	}
+	.push_tab_1_2 {
+	     margin-left: 50%;
+	}
+	.push_tab_2_3 {
+	     margin-left: 66.66666666666666%;
+	}
+	.push_tab_5_6 {
+	     margin-left: 83.33333333333334%;
+	}
+}
+
+
+@include mq($lap) {
+
+
+	.lap_1_6 {
+		width: 16.666666666666664%;
+	}
+	.lap_1_3 {
+		width: 33.33333333333333%;
+	}
+	.lap_1_2 {
+		width: 50%;
+	}
+	.lap_2_3 {
+		width: 66.66666666666666%;
+	}
+	.lap_5_6 {
+		width: 83.33333333333334%;
+	}
+	.lap_full {
+		width: 100%;
+	}
+
+	/* --------------------------- Offsets */
+	.push_lap_1_6 {
+	     margin-left: 16.666666666666664%;
+	}
+	.push_lap_1_3 {
+	     margin-left: 33.33333333333333%;
+	}
+	.push_lap_1_2 {
+	     margin-left: 50%;
+	}
+	.push_lap_2_3 {
+	     margin-left: 66.66666666666666%;
+	}
+	.push_lap_5_6 {
+	     margin-left: 83.33333333333334%;
+	}
+}

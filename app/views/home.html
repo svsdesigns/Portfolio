@@ -1,0 +1,16 @@
+<div class="hero_wrapper">
+    <div class="hero home">
+        <div class="wrapper">
+            <h1>{{naam}}</h1>
+            <h2 class="designation">{{intro}}</h2>
+            <ul class="list_inline list_social">
+                <li ng-repeat='service in social track by $index'>
+                    <a href="{{service.url}}" target='_blank' title="{{service.name}}">
+                        <i class="fa fa-2x {{'fa-'+service.name.toLowerCase()}}"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

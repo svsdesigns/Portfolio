@@ -1,0 +1,32 @@
+<!-- Header -->
+<div class="hero_wrapper">
+    <div class="hero web">
+        <div class="wrapper">
+            <h1 id="heading">{{heading}}</h1>
+        </div>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+    <div class="wrapper">        
+        <div class="row">
+            <div class="lap_1_3 tab_1_2" ng-repeat="project in projects track by $index">
+                <div class="be item">
+                    
+                    <div class="image_wrapper">
+                        <a target="_blank" href="{{project.url}}" class="external"></a>
+                        <img ng-src="{{project.covers['202'].replace('202', '404')}}" alt="{{project.name}}">
+                    </div>
+                    <div class="details">
+                        <h2>{{project.name}}</h2>
+                        <ul>
+                            <li><span>{{project.fields.toString()}}</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,937 @@
+﻿/* ---------------------------------------- Site ---------------------------------------- */
+
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	min-width: 320px;
+	/*overflow-y: scroll;*/
+}
+body {
+	color: $dark_grey;
+	font-family: $bodyFont;
+	font-size: 62.5%; /* 10px */
+	font-weight: $normal;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+
+/* ---------------------------------------- Base ---------------------------------------- */
+
+/*  This section generally sets out the basic styles for the page.
+	Headings, lists, anchors etc are specificed here */
+
+
+/* --------------------------- Headings */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+	display: block;
+	text-rendering: optimizeLegibility;
+	font-weight: inherit;
+}
+
+h1, .h1 {
+	font-size: 7.5em; /* 75px */
+	line-height: 0.7; 
+	text-align: center;
+	font-family: $heroFont;
+	word-spacing: 960px; 
+	@include vendor-prefix(transform, 'rotate(-10deg)');
+	color: $light;
+	padding-top: 0.4em;
+	padding-bottom: 0.5em;
+	transition: all 0s linear;
+	
+	@include mq(479) {
+		font-size: 11.5em; /* 115px */
+    }
+
+	@include mq($lap) {
+		font-size: 20em; /* 200px */
+	}
+}
+
+.home h1, .home .h1 {
+	@include mq(479) {
+		font-size: 10em; /* 115px */
+    }
+
+	@include mq($lap) {
+		font-size: 16em; /* 200px */
+	}
+}
+
+h2, .h2 {
+
+	font-size: 1.8em;
+	margin-bottom: 10px;
+	overflow: hidden;
+	padding: 0 10px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+}
+
+h3, .h3 {
+
+}
+h4, .h4 {
+
+}
+
+
+/* --------------------------- Paragraph */
+p, .p {
+	font-size: 1em; /* 16px */
+	line-height: 1.5628; /* 25px */
+	/*margin: 0 0 1.5628em;  0 0 25px */
+}
+	p a, .p a {
+		text-decoration: none;
+		border-bottom: 1px solid #e1e1e1;
+	}
+	p a:hover, .p a:hover {
+		text-decoration: none;
+	}
+
+/* --------------------------- Links */
+a {
+	// color: #0082c8;
+	// -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	//@include transition(color, 150ms, ease-out, 0s);
+	outline: none;
+}
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+
+
+/* --------------------------- List */
+ul, ol {
+	font-size: 0.875em; /* 14px */
+	line-height: 1.429; /* 20px */
+	margin: 0 0 1.25em; /* 0 0 20px */
+	zoom: 1;
+}
+ul {
+	list-style: none;
+}
+
+ul li {
+	margin: 0 0 10px;
+	padding: 0 0 0 12px;
+	zoom: 1;
+}
+ol li {
+	margin: 0 0 10px 25px;
+}
+
+li > ul,
+li > ol {
+	font-size: 1em; /* 16px */
+	margin-top: 12px;
+	margin-bottom: 0;
+}
+
+ol li ul li {
+	margin-left: 0;
+}
+ul li ol li {
+	background: none;
+	padding: 0;
+}
+
+
+/* ---------- List reset */
+.list_reset {
+	font-size: 1em; /* 16px */
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.list_reset li {
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* ---------- List inline */
+.list_inline {
+	//overflow: hidden;
+	
+}
+.list_inline li {
+	//float: left;
+	display: inline-block;
+}
+
+/* --------------------------- Blockquote */
+blockquote {
+	font-size: 1.375em; /* 22px */
+	line-height: 1.090; /* 24px */
+	margin: 0 0 20px;
+	text-align: center;
+
+	@include mq($lap) {
+		font-size: 1.75em; /* 28px */
+		line-height: 1.143; /* 32px */
+	}
+}
+cite {
+}
+
+
+/* --------------------------- Horizontal rule */
+hr, .hr {
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin-bottom: 15px;
+	font-size: 0;
+	line-height: 0;
+	border: none;
+	border-bottom: 1px solid #999;
+}
+
+
+/* --------------------------- Highlight state */
+::-moz-selection {
+	background: rgba(0, 130, 200, 1); /* #0082c8 */
+	color: #fff;
+	text-shadow: none;
+}
+::selection {
+	background: rgba(0, 130, 200, 1); /* #0082c8 */
+	color: #fff;
+	text-shadow: none;
+}
+
+
+/* ---------------------------------------- Site layout ---------------------------------------- */
+
+.content {
+	position: relative;
+	padding: 50px 0;
+	background-color: #e4e5e9;
+}
+
+/* ---------------------------------------- Navigation ---------------------------------------- */
+
+/* ---------------------------- Primary nav */
+.nav_primary {
+	overflow: auto;
+	height: 100%;
+	text-transform: uppercase;
+	font-weight: $strong;
+}
+.nav_primary > li {
+	border-bottom: 1px solid #e9e9e9;
+    font-size: 1.5em;
+    position: relative;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.nav_primary > li:last-child {
+	border-bottom: none;
+}
+.nav_primary li a {
+	color: $light_grey;
+    display: block;
+    padding: 17px 5px 17px 15px;
+    text-decoration: none;
+    position: relative;
+}
+.nav_primary li span {
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	width: 0%;
+	height: 1px;
+	background-color: $dark_grey;
+	transition: all 0.2s ease;
+}
+
+.no-touch .nav_primary li:hover {
+	span{
+		width: 100%;
+		color: $dark_grey;
+		transition: all 0.3s ease;
+	}
+	a {
+		color: $dark_grey;
+	}
+}
+.nav_primary li.current span, .nav_primary li.current a{
+	width: 100%;
+	color: $dark_grey;
+}
+/* ---------------------------------------- Header ---------------------------------------- */
+
+.header {
+	position: fixed;
+	width: 100%;
+	height: 45px;
+	background: $dark;
+	opacity: 0.3;
+	top:0;
+	left:0;
+	z-index: 10;
+	transition: top 0.3s ease;
+}
+
+/* --------------------------- Logo */
+.logo {
+	margin-bottom: 21px;
+}
+
+/* ---------------------------------------- Section (.section{})---------------------------------------- */
+.resume {
+	color: $dark_grey;
+	font-family: $bodyFont;
+	padding: 80px 0;
+
+	.row {
+		//margin-left: 0; /* -10px */
+
+		@include mq($lap) {
+			margin-left: -8em; /* -10px */
+		}
+		
+	}
+
+	[class*="lap_"],
+	[class*="desk_"],
+	[class*="tab_"] {
+		//padding-left: 1em; /* 30px */
+
+		@include mq($lap) {
+			padding-left: 8em; /* 10px */
+		}
+	}
+
+	.content {
+		background-color: $light;
+		font-weight: $strong;
+		padding: 30px 0;
+	}
+
+	.designation {
+		color: $light_grey;
+    }
+
+	.designation:before, .designation:after{
+    	background-color: $light_grey;
+   	}
+
+	h1, .h1, h2, .h2, h3, .h3, p, .p {
+		color: $dark_grey;
+	    font-family: "Open Sans",sans-serif;
+	}
+	h2, .h2 {
+		
+	}
+	h1, .h1 {
+		font-size: 5em;
+		line-height: 1;
+	    transform: none;
+	    word-spacing: inherit;
+	}
+	h3, .h3 {
+		font-size: 2em;
+		text-transform: uppercase;
+		margin: 20px 0 5px;
+
+		&+ p {
+			margin-top: 12px;
+		}
+		
+	}
+	h4, .h4 {
+		font-size: 1.6em;
+		margin-bottom: 3px;
+
+		i{
+			font-size: 0.8em;
+			color: $light_grey;
+		}
+	}
+
+	.duration {
+		font-size: 1.2em;
+		font-style: italic;
+		color: $light_grey;
+
+	}
+
+	p {
+		font-size: 1.3em;
+		margin-top: 8px;
+		line-height: 1.7;
+	}
+		
+	
+}
+
+.list_portfolio {
+	margin-left: -10px;
+	a {
+		color: $dark_grey;
+		text-decoration: none;
+		padding: 10px;
+	}
+	.fa {
+    	margin-right: 5px;
+
+	}
+
+	li {
+		margin-right: 15px;
+
+		
+	}
+	span {
+		display: inline-block;
+	}
+}
+
+/* ---------------------------------------- Footer (.footer{}) ---------------------------------------- */
+
+
+/* ---------------------------------------- Heroes ---------------------------------------- */
+.hero_wrapper{
+	height: 100%;
+	min-height: 100%;
+	background-color: $dark;
+
+	
+
+	.no-touch & {
+
+		.wrapper {
+			position: fixed;
+			@include vendor-prefix(transform, 'translate(-50%, -50%)');
+			left: 50%;
+			overflow: hidden;
+			top: 50%;
+			width: 100%;
+		}
+	}
+
+	.touch & {
+		.wrapper {
+			position: absolute;
+			overflow: hidden;
+			top: 50%;
+			width: 100%;
+			@include vendor-prefix(transform, 'translateY(-50%)');
+		}
+	}
+
+	.header_fixed & {
+		position: fixed;
+	    top: 9px;
+	    @include vendor-prefix(transform, 'translateY(0px)');
+	    z-index: 10;
+	}
+}
+.hero{
+	background: no-repeat 0 top $light_grey;
+	background-position: fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	height: 100%;
+	transition: all 0s linear;
+
+	.touch & {
+		background-position: scroll;
+	}
+}
+
+.home {
+     background-image: url(/images/home_mobile.jpg);
+
+    @include mq(479) {
+		background-image: url(/images/home_tab.jpg);
+    }
+
+	@include mq(1024) {
+		background-image: url(/images/home.jpg);
+	}    
+}
+.designation {
+    font-size: 1.5em;
+    color: $light;
+    font-style: italic;
+	text-align: center;
+}
+.designation:before, .designation:after{
+    background-color: $light;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    vertical-align: middle;
+    width: 25px;
+    margin: 0 10px;
+
+    @include mq($lap) {
+		width: 50px;
+		margin: 0 15px;
+    }
+}
+.photo, .web {
+    margin-bottom: 40px;
+}
+.photo {
+    background-image: url(/images/photos_mobile.jpg);
+
+    @include mq(479) {
+		background-image: url(/images/photos_tab.jpg);
+    }
+
+	@include mq(1024) {
+		background-image: url(/images/photos.jpg);
+	}
+}
+.web {
+    
+	background-image: url(/images/web_mobile.jpg);
+
+    @include mq(479) {
+		background-image: url(/images/web_tab.jpg);
+    }
+
+	@include mq(1024) {
+		background-image: url(/images/web.jpg);
+	}
+}
+
+
+/* ---------------------------------------- Lists (.list_links {}) ---------------------------------------- */
+
+/*----------------------Homepage social icon*/
+.list_social {
+
+	text-align: center;
+	height: 40px;
+	margin-top: 20px;
+
+	li {
+		height: 40px;
+	    margin: 0;
+	    padding: 0;
+	    width: 40px;
+	}
+
+	.fa {
+		color: $light;
+	}
+
+	a {
+		display: block;
+	    height: 100%;
+	    padding: 11px;
+	    width: 100%;
+	}
+}
+/*----------------------Resume section list*/
+.list_resume {
+
+	li {
+		margin-bottom: 20px;
+	}
+	
+}
+
+
+
+/* ---------------------------------------- Links/Buttons (.button {})---------------------------------------- */
+
+/* ---------------------------------------- Modules ---------------------------------------- */
+
+
+/*-----------------------Slide Menu Module*/
+
+/* Sliding Navigation Module */
+.module_slidenav {
+	background: #fff;
+    box-shadow: 1px 1px 5px $dark_grey;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    @include vendor-prefix(transform, 'translate3d(120%, 0px, 0px)');
+    transition: all 0.3s ease 0s;
+    width: 250px;
+    z-index: 9;
+
+    .menu_open & {
+    	@include vendor-prefix(transform, 'translate3d(0%, 0px, 0px)');
+		transition: all 0.3s ease 0s;
+    }
+}
+
+.profile {
+	height: 100px; 
+	background: url(/images/menu.jpg) #009688;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	height: 200px;
+    padding-top: 60px;
+}
+.avatar {
+	 border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px $light_grey;
+    height: 70px;
+    margin: 0 auto;
+    width: 70px;
+    position: relative;
+
+    img{
+		border-radius: 50%;
+    }
+}
+.icon_availability {
+	background: none repeat scroll 0 0 #ccc;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    bottom: -12px;
+    height: 18px;
+    position: absolute;
+    right: 24px;
+    width: 18px;
+}
+.info {
+	text-align: center;
+	color: $light;
+	padding-top: 20px;
+	font-size: 1.3em;
+	font-weight: $strong;
+
+	div {
+		margin-bottom: 3px;
+	}
+
+	.fa {
+		margin-right: 5px;
+	}
+}
+
+.module_powered {
+	text-align: center;
+	padding: 20px 0;
+	color: $light_grey;
+}
+
+.module_powered ul {
+	margin: 10px auto 0;
+
+	li {
+		display: inline-block;
+		background: url(/images/icon_power.png) no-repeat 0 0;
+		overflow: hidden;
+		margin-right: 5px;
+		opacity: 0.4;
+		padding: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.no-touch & {
+		li:hover {
+			opacity: 0.9;
+			transition: opacity 0.3s ease;
+		}
+	}
+
+	a {
+		width: 30px;
+		height: 30px;
+		display: block;
+		padding: 0;
+		text-indent: -200px;
+	}
+
+	li:nth-child(2n) {
+		background-position: -35px 0;
+	}
+
+	li:nth-child(3n) {
+		background-position: -68px 0;
+	}
+}
+
+
+/*----- Cards----------*/
+.item {
+	border-radius: 2px;
+	box-shadow: 0 1px 2px #ccc;
+	margin-bottom: 10px;
+	overflow: hidden;
+	position: relative;
+	background-color: $light;
+}
+	.image_wrapper {
+	    //height: 243px;
+	    overflow: hidden;
+		position: relative;
+		img {
+		    max-width: 100%;
+		    width: 100%;
+		    transition: all 1s ease;
+		}
+		.px & {
+			//height: 300px;
+		}
+		.overlay {
+			background-color: #009688;
+			position: absolute;
+			top:0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			@include vendor-prefix(transform, 'translate3d(0, -100%, 0)');
+			transition: all 0.3s ease;
+		}
+		span {
+			color: $light;
+			font-size: 1.5em;
+			text-transform: uppercase;
+			text-align: center;
+			border-bottom: 2px solid #fff;
+		    border-top: 2px solid #fff;
+		    left: 50%;
+		    padding: 10px 0;
+		    position: absolute;
+		    top: 50%;
+		    @include vendor-prefix(transform, 'translate3d(-50%, -50%, 0)');
+		}
+		
+		.no-touch & {
+			&:hover {
+				img{
+					@include vendor-prefix(transform, 'scale(1.2, 1.2)');
+				}
+				.overlay {
+					@include vendor-prefix(transform, 'translate3d(0, 0%, 0)');
+					opacity: 0.95;
+				}
+			}
+		}
+		
+}
+
+.external {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 8;
+    width: 100%;
+    height:100%;
+
+    .fa {
+		color: #aaa;
+    }
+
+    .be & {
+		bottom: 27%;
+    }
+}
+
+	.details {
+		padding: 18px 10px 10px;
+    	text-align: center;
+
+		ul {
+			color: $light_grey;
+		    display: inline-block;
+		    margin: 0;
+		    padding: 0;
+		}
+
+		li {
+			float: left;
+		    margin: 0 20px 0 0;
+		    padding: 5px 0;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		span {
+		    display: inline-block;
+		    font-size: 1.5em;
+		}
+	}
+
+
+
+/* ---------------------------------------- Media block (.media{}) ---------------------------------------- */
+
+
+/* ---------------------------------------- Forms ---------------------------------------- */
+
+/*form {
+	position: relative;
+	zoom: 1;
+}*/
+
+/* hover/focus - for accessbility, include new style to overwrite default */
+/*input:focus,
+select:focus,
+textarea:focus {
+	outline: 0;
+}
+
+input,
+textarea {
+	border: 1px solid #E8E8E8;
+	font-size: 0.875em;
+	margin: 0 0 15px;
+	padding: 8px;
+	width: 100%;
+}
+*/
+
+
+/* ---------------------------------------- Table ---------------------------------------- */
+
+
+/* ---------------------------------------- Buttons ---------------------------------------- */
+.header_btn_wrapper {
+	color: $light;
+    position: fixed;
+    right: 6px;
+    top: 0;
+    z-index: 99;
+	width: 95px;
+	cursor: pointer;
+
+	> span {
+		display: inline-block;
+		float: left;
+		font-size: 1.5em;
+		text-transform: uppercase;
+		padding-top: 13px;
+		font-weight: $strong;
+    }
+}
+
+.btn_header {
+
+	cursor: pointer;
+	width: 48px;
+	height: 48px;
+	padding: 16px 12px;
+	@include vendor-prefix(transform, 'rotate(0deg)');
+	transition: all 0.6s ease;
+	border-radius: 50%;
+	background-color: transparent;
+	outline: none;
+	span {
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: $light;
+		margin-bottom: 3px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+
+#hamburger{
+}
+.btn_menu {
+	.menu_open & {
+		@include vendor-prefix(transform, 'rotate(-180deg)');
+		transition: all 0.6s ease;
+
+		span:nth-child(1), span:nth-child(3){
+			width: 50%;
+			@include vendor-prefix(transform-origin, '6px 50%');
+			@include vendor-prefix(transform, 'rotate(45deg)');
+			transition-delay: 2s;
+			transition: all 0.6s ease;
+		}
+		span:nth-child(1) {
+			@include vendor-prefix(transform, 'rotate(-45deg)');
+		}
+	}
+}
+
+.home_btn_wrapper {
+	right: auto;
+	left: 6px;
+	width: 165px;
+
+	.btn_home {
+		float: left;
+		span:nth-child(1), span:nth-child(3){
+			width: 50%;
+			@include vendor-prefix(transform-origin, '6px 50%');
+			@include vendor-prefix(transform, 'rotate(45deg)');
+			transition-delay: 2s;
+			transition: all 0.6s ease;
+		}
+		span:nth-child(1) {
+			@include vendor-prefix(transform, 'rotate(-45deg)');
+		}
+	}
+}
+
+
+/* ---------------------------------------- Videos (.videos{}) ---------------------------------------- */
+
+
+/* ---------------------------------------- Animation ---------------------------------------- */
+
+
+/*==================================== View Animations ====================================*/
+
+.view-animation{
+	transition: all 0.6s ease;
+	height: 100%;
+}
+.view-animation.ng-enter {
+	opacity: 0;
+  	transform: translate3d(0, -5%, 0);
+	
+}
+.view-animation.ng-enter.ng-enter-active {
+	opacity: 1;
+    transform: translate3d(0, 0%, 0);
+	//transition-delay: 0.24s;
+  transition-delay: 0.5s;
+}
+.view-animation.ng-leave {
+	opacity: 1;
+   transform: translate3d(0, 0%, 0);
+}
+.view-animation.ng-leave.ng-leave-active {
+	opacity: 0;
+    transform: translate3d(0, 5%, 0);
+   //transition-delay: 0.12s;
+}
+
+.ng-hide {
+	display: none!important;
+}
+
+

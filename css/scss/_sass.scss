@@ -1,0 +1,92 @@
+﻿
+/* ---------------------------------------- Variables ---------------------------------------- */
+/* Typography baseline (in px/ratio) */
+$docFontSize: 16;
+$docLineHeight: 1.25; /* 20px */
+
+/* Font stacks */
+$baseFont: Arial, Helvetica, sans-serif;
+$sansFont: Verdana, Arial, Helvetica, sans-serif;
+$serifFont: Georgia, Times, serif;
+//$bodyFont: 'Lato', sans-serif;
+$bodyFont: 'Open Sans', sans-serif;
+$heroFont: 'Mr Dafoe', cursive;
+
+$normal: 300;
+$strong: 400;
+
+/* Colors */
+$light: #fff;
+$dark: #000;
+$light_grey: #666;
+$dark_grey: #333;
+ 
+/* Breakpoints (in px) */
+$desk: 1449;
+$lap: 800;
+$tab: 600;
+
+
+/* ---------------------------------------- Mixins ---------------------------------------- */
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+			border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow:inset $top $left $blur $spread $color;
+		-moz-box-shadow:inset $top $left $blur $spread $color;
+		box-shadow:inset $top $left $blur $spread $color;
+	} @else {
+		-webkit-box-shadow: $top $left $blur $spread $color;
+		-moz-box-shadow: $top $left $blur $spread $color;
+		box-shadow: $top $left $blur $spread $color;
+	}
+}
+
+@mixin transition($property, $duration, $easing, $delay) {
+	-webkit-transition: $property $duration $easing $delay;
+	   -moz-transition: $property $duration $easing $delay;
+	     -o-transition: $property $duration $easing $delay;
+			transition: $property $duration $easing $delay;
+}
+
+@mixin translate($x, $y) {
+	-ms-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+@mixin translateX($x) {
+	-webkit-transform:translateX($x) !important;
+   -moz-transform:translateX($x) !important;
+    -ms-transform:translateX($x) !important;
+     -o-transform:translateX($x) !important;
+        transform:translateX($x) !important;
+}
+
+@mixin translate3d($x, $y, $z) {
+	-webkit-transform: translate3d($x, $y, $z);
+	-moz-transform: translate3d($x, $y, $z);
+	-o-transform: translate3d($x, $y, $z);
+	transform: translate3d($x, $y, $z);
+}
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+/*
+	MEDIA QUERY
+	$point: breakpoint integer in px
+	$constraint: Constraint for media query (min/max)
+	$feature: Media feature of query (width/height)
+*/
+@mixin mq($point, $constraint: min, $feature: width) {
+	@media screen and (#{$constraint}-#{$feature}: $point / $docFontSize + em) {
+		@content;
+	}
+}
