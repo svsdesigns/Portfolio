@@ -461,6 +461,7 @@ hr, .hr {
 
 .home {
      background-image: url(/images/home_mobile.jpg);
+     background-color: #009688;
 
     @include mq(479) {
 		background-image: url(/images/home_tab.jpg);
@@ -495,6 +496,7 @@ hr, .hr {
 }
 .photo {
     background-image: url(/images/photos_mobile.jpg);
+    background-color: #FF5722;
 
     @include mq(479) {
 		background-image: url(/images/photos_tab.jpg);
@@ -507,6 +509,7 @@ hr, .hr {
 .web {
     
 	background-image: url(/images/web_mobile.jpg);
+	background-color: #00BCD4;
 
     @include mq(479) {
 		background-image: url(/images/web_tab.jpg);
