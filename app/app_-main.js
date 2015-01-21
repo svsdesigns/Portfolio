@@ -10,6 +10,7 @@
 
     .run(['$rootScope', '$window', '$location', '$routeParams', function($rootScope, $window, $location, $routeParams) {
 
+        /*---------------- Selected link */ 
         var menu_items = document.querySelectorAll('.nav_primary li');
 
         function currSelect(path) {
@@ -26,12 +27,17 @@
             }
         }
 
+
+        
+        // Hash change 
         $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
 
             $rootScope.currentPath = $location.path();
 
+            // Selected link called
             currSelect($rootScope.currentPath);
 
+            //Google analytics page view
             $window.ga('send', 'pageview', { page: $location.path() });
 
         });
@@ -53,30 +59,6 @@
             document.body.classList.toggle('menu_open');
             e.stopPropagation();
         });
-
-        // Select current item in menu
-        // var menu_items = document.querySelector('.nav_primary');
-        // menu_items.addEventListener('click', function (e) {
-
-        //     var tar = e.target,
-        //         tarName = e.target.nodeName,
-        //         tarParent = tar.parentNode.nodeName,
-        //         parentClass = tar.parentNode.classList,
-
-        //         childs = e.currentTarget.childNodes;
-
-        //     for (var i = 0; i < childs.length; i++) {
-        //         if (childs[i].nodeType === 1 && childs[i].classList.contains('current')) {
-        //             e.currentTarget.childNodes[i].classList.remove('current');
-        //         }
-        //     }
-
-        //     if (tarName === 'A' && tarParent === 'LI') {
-        //         parentClass.add('current');
-
-        //     }
-
-        // });
 
         // Close Menu on document click
         document.addEventListener('click', function(){
@@ -111,20 +93,25 @@
         }
 
         // Calling all the Robots
-        Behance.getProjects();
+        window.onload = function(){
 
-        FiveHundred.getPhotos(function (fhPx) {
-            if (fhPx.success) {
-                console.log('Data Received');
-            } else {
-                alert('Unable to complete request: ' + fhPx.status + ' - ' + fhPx.error_message);
-            }
-        });
+            Behance.getProjects();
+
+            FiveHundred.getPhotos(function (fhPx) {
+                if (fhPx.success) {
+                    console.log('Data Received');
+                } else {
+                    alert('Unable to complete request: ' + fhPx.status + ' - ' + fhPx.error_message);
+                }
+            });
+
+        }
+        
     }])
 
 
     /*--------- Home */
-    .controller('Home', ['$scope', 'Behance', 'FiveHundred', function ($scope, Behance, FiveHundred) {
+    .controller('Home', ['$scope','$rootScope', '$window', 'Behance', 'FiveHundred', function ($scope, $rootScope, $window, Behance, FiveHundred) {
         $scope.naam = "Surendra Vikram Singh";
         $scope.intro = "Front-End Developer/Designer";
         document.title = "SVS Designs: Surendra Vikram Singh's Portfolio | UI Developer | India ";
@@ -134,7 +121,28 @@
             {'name': 'Flickr', 'url': 'https://www.flickr.com/photos/svsclicks'},
             {'name': 'Linkedin', 'url': 'https://in.linkedin.com/in/svsdesigns'},
             {'name': 'Facebook', 'url': 'https://www.facebook.com/svsdesigns'},
-            ]
+            ];
+
+        // /*---------------- bg Load */ 
+        // $scope.bgLoaded =  false;
+        // function bgLoad() {
+        //     if($rootScope.currentPath !== '/resume') {
+
+        //         var heroWrapper = document.querySelector('.hero'),
+        //             heroImg = $window.getComputedStyle(heroWrapper,null)['background-image'].replace('")', '').split('url("')[1],
+
+        //             imgs = document.createElement('img');
+        //             imgs.setAttribute('src', heroImg);
+
+        //        imgs.addEventListener('load', function() {
+        //             $scope.bgLoaded =  true;
+        //         })
+        //     }
+        // }
+        // if(!$scope.bgLoaded) {
+        //     bgLoad();
+        // }
+        
     }])
 
      /*--------- Resume */
