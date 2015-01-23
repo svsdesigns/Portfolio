@@ -56,6 +56,8 @@
         //Hamburger click event
         var ham = document.getElementById('hamburger');
         ham.addEventListener('click', function (e) {
+            ga('send', 'event', 'button', 'click', 'menu-click');
+
             document.body.classList.toggle('menu_open');
             e.stopPropagation();
         });
@@ -188,6 +190,8 @@
 
     /*--------- Configuration --------------*/
     .config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
+
+        //$httpProvider.useApplyAsync(true);
 
         $routeProvider.when('/', {
             templateUrl: 'app/views/home.html',

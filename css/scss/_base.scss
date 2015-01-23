@@ -921,7 +921,6 @@ textarea {
 .view-animation.ng-enter.ng-enter-active {
 	opacity: 1;
     transform: translate3d(0, 0%, 0);
-	//transition-delay: 0.24s;
   transition-delay: 0.5s;
 }
 .view-animation.ng-leave {
@@ -931,11 +930,9 @@ textarea {
 .view-animation.ng-leave.ng-leave-active {
 	opacity: 0;
     transform: translate3d(0, 5%, 0);
-   //transition-delay: 0.12s;
 }
 
 .ng-hide {
 	display: none!important;
 }
-
 
