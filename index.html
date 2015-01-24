@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link href='css/style.min.css' rel='stylesheet' type='text/css'>
+    <!-- <link href='css/style.min.css' rel='stylesheet' type='text/css'> -->
     
 </head>
 <body ng-controller="Main">
@@ -77,17 +77,27 @@
     (function(){
 
         var loadFonts = function(){
+
+            var docFrag = document.createDocumentFragment();
+
+            var cssMain =  document.createElement('link');
+                cssMain.rel = 'stylesheet';
+                cssMain.type = 'text/css';
+                cssMain.href = 'css/style.min.css';
+                docFrag.appendChild(cssMain);
+
             var fontAwesome =  document.createElement('link');
                 fontAwesome.rel = 'stylesheet';
                 fontAwesome.href = '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css';
+                docFrag.appendChild(fontAwesome);
 
             var fontGoogle =  document.createElement('link');
                 fontGoogle.rel = 'stylesheet';
                 fontGoogle.type = 'text/css';
                 fontGoogle.href = '//fonts.googleapis.com/css?family=Mr+Dafoe|Open+Sans:300,400';
+                docFrag.appendChild(fontGoogle);
 
-                document.head.appendChild(fontAwesome);
-                document.head.appendChild(fontGoogle);
+                document.head.appendChild(docFrag);
         }
 
         var haitouch = requestAnimationFrame || mozRequestAnimationFrame ||  webkitRequestAnimationFrame || msRequestAnimationFrame;
