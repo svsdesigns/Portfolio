@@ -90,8 +90,8 @@
                 document.head.appendChild(fontGoogle);
         }
 
-        var raf = requestAnimationFrame || mozRequestAnimationFrame ||  webkitRequestAnimationFrame || msRequestAnimationFrame;
-        if {(raf) raf(cb);}else {window.addEventListener('load', cb)};
+        var haiTouch = requestAnimationFrame || mozRequestAnimationFrame ||  webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if {(haiTouch) raf(loadFonts);}else {window.addEventListener('load', loadFonts)};
         
     })();
 </script>
