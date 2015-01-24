@@ -114,9 +114,6 @@
                 }
             });
 
-            // var imgBg = document.createElement('')
-            // document.body.appendChild('')
-
         }
         
     }])
@@ -143,11 +140,12 @@
         $scope.intro = "Front-End Developer/Designer";
         document.title = 'Resume | UI Developer | Surendra Vikram Singh';
 
-        var trackDownload = function() {
+        function trackDownload() {
             var downloadElem = document.getElementById('resume_download');
 
             downloadElem.addEventListener('click', function(e) {
                 // Event tracking
+                console.log(this.href);
                 ga('send', 'event', 'download', 'click', 'resume-downloaded');
 
             });
