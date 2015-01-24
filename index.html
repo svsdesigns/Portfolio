@@ -75,17 +75,24 @@
 <script src="app/lib/all_script.js"></script>
 <script>
     (function(){
-        var fontAwesome =  document.createElement('link');
-            fontAwesome.rel = 'stylesheet';
-            fontAwesome.href = '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css';
 
-        var fontGoogle =  document.createElement('link');
-            fontGoogle.rel = 'stylesheet';
-            fontGoogle.type = 'text/css';
-            fontGoogle.href = '//fonts.googleapis.com/css?family=Mr+Dafoe|Open+Sans:300,400';
+        function loadFonts(){
+            var fontAwesome =  document.createElement('link');
+                fontAwesome.rel = 'stylesheet';
+                fontAwesome.href = '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css';
 
-            document.head.appendChild(fontAwesome);
-            document.head.appendChild(fontGoogle);
+            var fontGoogle =  document.createElement('link');
+                fontGoogle.rel = 'stylesheet';
+                fontGoogle.type = 'text/css';
+                fontGoogle.href = '//fonts.googleapis.com/css?family=Mr+Dafoe|Open+Sans:300,400';
+
+                document.head.appendChild(fontAwesome);
+                document.head.appendChild(fontGoogle);
+        }
+
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||  webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if {(raf) raf(cb);}else {window.addEventListener('load', cb)};
+        
     })();
 </script>
 
