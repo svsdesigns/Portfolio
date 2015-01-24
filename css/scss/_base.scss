@@ -165,41 +165,17 @@ ul li ol li {
 
 /* ---------- List inline */
 .list_inline {
-	//overflow: hidden;
 	
 }
 .list_inline li {
-	//float: left;
 	display: inline-block;
 }
 
 /* --------------------------- Blockquote */
-blockquote {
-	font-size: 1.375em; /* 22px */
-	line-height: 1.090; /* 24px */
-	margin: 0 0 20px;
-	text-align: center;
-
-	@include mq($lap) {
-		font-size: 1.75em; /* 28px */
-		line-height: 1.143; /* 32px */
-	}
-}
-cite {
-}
 
 
-/* --------------------------- Horizontal rule */
-hr, .hr {
-	display: block;
-	width: 100%;
-	height: 1px;
-	margin-bottom: 15px;
-	font-size: 0;
-	line-height: 0;
-	border: none;
-	border-bottom: 1px solid #999;
-}
+
+/* --------------------------- Horizontal rule(hr, .hr {}) */
 
 
 /* --------------------------- Highlight state */
@@ -608,7 +584,7 @@ hr, .hr {
     }
 }
 .icon_availability {
-	background: none repeat scroll 0 0 #ccc;
+	background: none repeat scroll 0 0 #009688; /*#ccc: invisible,  #009688: available*/
     border: 3px solid #fff;
     border-radius: 50%;
     bottom: -12px;
@@ -897,6 +873,32 @@ textarea {
 		span:nth-child(1) {
 			@include vendor-prefix(transform, 'rotate(-45deg)');
 		}
+	}
+}
+
+.btn_download {
+	color: #666;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 10px;
+    text-decoration: none;
+    width: 175px;
+    border: 1px solid $light_grey;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+
+	&:hover {
+		color: $dark_grey;
+		border-color: $dark_grey;
+	}
+	span {
+		font-size: 1.5em;
+    	margin-left: 6px;
+    	font-weight: $strong;
+	}
+	.fa {
+		float: left;
+    	margin-top: 8px;
 	}
 }
 

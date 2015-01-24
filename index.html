@@ -12,13 +12,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta property="og:title" content="SVS Designs: Surendra Vikram Singh's Portfolio" />
-    <meta property="og:description" content="India based User Interface Developer, born with a pair of headphones" />
-    <meta property="og:url" content="http://svsdesigns.in" />
-    <meta property="og:image" content="http://svsdesigns.in/images/fb.png" />
     <link href='css/style.min.css' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Mr+Dafoe|Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    
 </head>
 <body ng-controller="Main">
 <!-- Menu -->
@@ -49,7 +44,7 @@
             <div class="icon_availability"></div>
         </div>
         <div class="info">
-            <div>Invisible</div>
+            <div>Available for work</div>
             <div><i class="fa fa-map-marker"></i>Pune, India</div>
         </div>
         
@@ -77,10 +72,22 @@
 
 <!-- Scripts -->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
-<script src="app/lib/angular-route.min.js"></script>
-<script src="app/lib/angular-animate.min.js"></script>
-<script src="500px/500px.min.js"></script>
-<script src="app/minappu.js"></script>
+<script src="app/lib/all_script.js"></script>
+<script>
+    (function(){
+        var fontAwesome =  document.createElement('link');
+            fontAwesome.rel = 'stylesheet';
+            fontAwesome.href = '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css';
+
+        var fontGoogle =  document.createElement('link');
+            fontGoogle.rel = 'stylesheet';
+            fontGoogle.type = 'text/css';
+            fontGoogle.href = '//fonts.googleapis.com/css?family=Mr+Dafoe|Open+Sans:300,400';
+
+            document.head.appendChild(fontAwesome);
+            document.head.appendChild(fontGoogle);
+    })();
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

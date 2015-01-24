@@ -10,6 +10,7 @@
 
     .run(['$rootScope', '$window', '$location', '$routeParams', function($rootScope, $window, $location, $routeParams) {
 
+
         /*---------------- Selected link */ 
         var menu_items = document.querySelectorAll('.nav_primary li');
 
@@ -101,7 +102,7 @@
 
             FiveHundred.getPhotos(function (fhPx) {
                 if (fhPx.success) {
-                    console.log('Data Received');
+                    //console.log('Data Received');
                 } else {
                     alert('Unable to complete request: ' + fhPx.status + ' - ' + fhPx.error_message);
                 }
@@ -127,26 +128,6 @@
             {'name': 'Linkedin', 'url': 'https://in.linkedin.com/in/svsdesigns'},
             {'name': 'Facebook', 'url': 'https://www.facebook.com/svsdesigns'},
             ];
-
-        // /*---------------- bg Load */ 
-        // $scope.bgLoaded =  false;
-        // function bgLoad() {
-        //     if($rootScope.currentPath !== '/resume') {
-
-        //         var heroWrapper = document.querySelector('.hero'),
-        //             heroImg = $window.getComputedStyle(heroWrapper,null)['background-image'].replace('")', '').split('url("')[1],
-
-        //             imgs = document.createElement('img');
-        //             imgs.setAttribute('src', heroImg);
-
-        //        imgs.addEventListener('load', function() {
-        //             $scope.bgLoaded =  true;
-        //         })
-        //     }
-        // }
-        // if(!$scope.bgLoaded) {
-        //     bgLoad();
-        // }
         
     }])
 
@@ -193,6 +174,11 @@
 
         //$httpProvider.useApplyAsync(true);
 
+        // $locationProvider.html5Mode({
+        //   enabled: true,
+        //   requireBase: false
+        // });
+
         $routeProvider.when('/', {
             templateUrl: 'app/views/home.html',
             controller: 'Home'
@@ -210,9 +196,9 @@
             templateUrl: 'app/views/resume.html',
             controller: 'Resume'
         })
-            .otherwise({
-            redirectTo: '/'
-        });
+        //     .otherwise({
+        //     redirectTo: '/'
+        // });
     }])
 
     /*--------- Factories --------------*/
