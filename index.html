@@ -76,7 +76,7 @@
 <script>
     (function(){
 
-        function loadFonts(){
+        var loadFonts = function(){
             var fontAwesome =  document.createElement('link');
                 fontAwesome.rel = 'stylesheet';
                 fontAwesome.href = '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css';
@@ -90,8 +90,8 @@
                 document.head.appendChild(fontGoogle);
         }
 
-        var haiTouch = requestAnimationFrame || mozRequestAnimationFrame ||  webkitRequestAnimationFrame || msRequestAnimationFrame;
-        if {(haiTouch) raf(loadFonts);}else {window.addEventListener('load', loadFonts)};
+        var haitouch = requestAnimationFrame || mozRequestAnimationFrame ||  webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (haitouch){ haitouch(loadFonts);}else {window.addEventListener('load', loadFonts)};
         
     })();
 </script>
