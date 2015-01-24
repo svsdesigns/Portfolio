@@ -54,13 +54,31 @@
             document.body.classList.add('touch');
         }
 
+        // Cross browser event attachment
+        function addListener(element, type, callback) {
+            if (element.addEventListener) element.addEventListener(type, callback);
+            else if (element.attachEvent) element.attachEvent('on' + type, callback);
+        }
+
         //Hamburger click event
         var ham = document.getElementById('hamburger');
-        ham.addEventListener('click', function (e) {
+        ham.addListener(ham, 'click', function() {
+
+            // Event tracking
             ga('send', 'event', 'button', 'click', 'menu-click');
 
+            // Menu toggle
             document.body.classList.toggle('menu_open');
             e.stopPropagation();
+        });
+
+        // Resume Download
+        var resume = document.getElementById('resume_download');
+
+        resume.addListener(ham, 'click', function() {
+
+            // Download tracking
+            ga('send', 'event', 'download', 'click', 'resume-download');
         });
 
         // Close Menu on document click
