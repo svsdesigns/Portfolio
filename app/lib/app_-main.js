@@ -68,6 +68,7 @@
             e.stopPropagation();
         });
 
+
         // Close Menu on document click
         document.addEventListener('click', function(){
             if(document.body.classList.contains('menu_open')) {
@@ -137,10 +138,21 @@
     }])
 
      /*--------- Resume */
-    .controller('Resume', ['$scope', 'Behance', 'FiveHundred', function ($scope, Behance, FiveHundred) {
+    .controller('Resume', ['$scope', function ($scope) {
         $scope.naam = "Surendra Vikram Singh";
         $scope.intro = "Front-End Developer/Designer";
         document.title = 'Resume | UI Developer | Surendra Vikram Singh';
+
+        var trackDownload = function() {
+            var downloadElem = document.getElementById('resume_download');
+
+            downloadElem.addEventListener('click', function(e) {
+                // Event tracking
+                ga('send', 'event', 'download', 'click', 'resume-downloaded');
+
+            });
+        }
+        trackDownload();
     }])
 
     /*--------- Design */
@@ -201,9 +213,9 @@
             templateUrl: 'app/views/resume.html',
             controller: 'Resume'
         })
-        //     .otherwise({
-        //     redirectTo: '/'
-        // });
+            .otherwise({
+            redirectTo: '/'
+        });
     }])
 
     /*--------- Factories --------------*/
