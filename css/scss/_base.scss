@@ -12,12 +12,14 @@ html {
 	/*overflow-y: scroll;*/
 }
 body {
+	opacity: 1;
 	color: $dark_grey;
 	font-family: $bodyFont;
 	font-size: 62.5%; /* 10px */
 	font-weight: $normal;
 	height: 100%;
 	overflow-x: hidden;
+	
 }
 
 
@@ -910,6 +912,11 @@ textarea {
 
 
 /*==================================== View Animations ====================================*/
+html {
+	opacity: 1;
+	transition: opacity 0.6s ease;
+}
+
 
 .view-animation{
 	transition: all 0.6s ease;
@@ -918,12 +925,11 @@ textarea {
 .view-animation.ng-enter {
 	opacity: 0;
   	transform: translate3d(0, -5%, 0);
-	
 }
 .view-animation.ng-enter.ng-enter-active {
 	opacity: 1;
     transform: translate3d(0, 0%, 0);
-  transition-delay: 0.5s;
+  	transition-delay: 0.5s;
 }
 .view-animation.ng-leave {
 	opacity: 1;
