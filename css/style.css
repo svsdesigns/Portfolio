@@ -499,8 +499,12 @@ ul li ol li {
 .resume .h1 {
 	font-size: 5em;
 	line-height: 1;
-	transform: none;
 	word-spacing: inherit;
+	-webkit-transform: none;
+	-ms-transform: none;
+	-moz-transform: none;
+	-o-transform: none;
+	transform: none;
 }
 
 .resume h3,

@@ -321,8 +321,8 @@ ul li ol li {
 	h1, .h1 {
 		font-size: 5em;
 		line-height: 1;
-	    transform: none;
 	    word-spacing: inherit;
+	    @include vendor-prefix(transform, 'none')
 	}
 	h3, .h3 {
 		font-size: 2em;
