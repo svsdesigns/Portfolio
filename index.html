@@ -2,7 +2,7 @@
 <!--[if IE 7]> <html class="no-js lt_ie9 lt_ie8" lang="en" ng-app="folio"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt_ie9" lang="en" ng-app="folio"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" lang="en" class="mobile" ng-app="folio">
+<html class="no-js" lang="en" ng-app="folio">
 <!--<![endif]-->
 <head>
     <!-- <base href="/"> -->
@@ -27,8 +27,8 @@
 <!-- Views to be loaded -->
 <div ng-view class="view-animation"></div>
 <!-- Scripts -->
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
-<script src="app/all_script.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script> -->
+<!-- <script src="app/all_script.js"></script> -->
 
 <script>
     (function(){
@@ -59,6 +59,22 @@
                 docFrag.appendChild(fontGoogle);
 
                 document.head.appendChild(docFrag);
+
+            var ngdifer =  document.createElement('script');
+                ngdifer.src = "app/angular.min.js";
+                document.body.appendChild(ngdifer);
+
+            var allScript =  document.createElement('script');
+                allScript.src = "app/all_script.js";
+                document.body.appendChild(allScript); 
+
+                // window.onload = function(){
+                //     angular.element(document).ready(function() {
+                //         document.body.appendChild(allScript);                      
+                      
+                //     });
+                // }
+                
         }
 
         var hastouch = requestAnimationFrame || mozRequestAnimationFrame ||  webkitRequestAnimationFrame || msRequestAnimationFrame;
