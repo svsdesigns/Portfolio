@@ -1,0 +1,85 @@
+{
+    "name": "Surendra Vikram Singh",
+    "designation": "User Interface Developer",
+    "heading": "About",
+    "about": "A self-taught UI Developer with 6 Yrs of experience in developing bug-free, performance optimized & responsive web applications with pixel-perfect integration. Recently worked on Facebook, Behance & 500px API and integrated them with AngularJS. I'm looking for a company working on Cutting-edge technologies & focused on quality, where I can develop and implement my knowledge",
+    "skills": {
+        "heading": "Skills",
+        "description": [{
+            "name": "Adobe Photoshop",
+            "level": "Intermediate"
+        }, {
+            "name": "Adobe Illustrator",
+                "level": "Intermediate"
+        }, {
+            "name": "HTML & CSS",
+                "level": "Proficient"
+        }, {
+            "name": "Javascript",
+                "level": "Intermediate"
+        }]
+    },
+    
+    "education": {
+        "heading": "Education",
+        "description": [{
+            "name": "Diploma In Web Designing",
+            "duration": "TGC, New Delhi- 2008-2009"
+        }, {
+            "name": "B.E In Electrical & Electronics",
+            "duration": "CSIT, Bhilai- 2003-2007"
+        }]
+    },
+
+    "work": {
+        "heading": "Experience",
+        "description":[{
+            "name": "Synechron technologies",
+            "designation": "Sr. Associate - Software",
+            "duration": "April 2013 - September 2014",
+            "summary": "Developed complex, cross-browser compatible and responsive websites using SASS, Grunt and custom Boilerplate for code maintenance and seamless workflow. Worked on projects like Alcatel-lucent, SABMiller, Sainsbury, NATS, UAE PMO, MSL Group UK & 24/7 Real Media"
+        }, {
+            "name": "Fabulloso",
+            "designation": "UI Designer/Developer",
+            "duration": "December 2011 - April 2013",
+            "summary": "Designed, developed and implemented themes for Magento & Wordpress. Keeping user-centric designs in mind developed interactive features & easy to use interfaces using the latest web technologies and various UX techniques. Optimized the code for better performance and cross-browser compatibilities. Websites showcased by ELLE & The Hindu."
+        }, {
+            "name": "Knowlarity Communication",
+            "designation": "UI Designer/Developer",
+            "duration": "September 2010 - December 2011",
+            "summary": "Responsible for front-end design & development of complex web based applications in coordination with developers. Developed templates using the latest technologies (HTML5, CSS3 & jQuery). Designed Android User interface for one of the major Government projects."
+        }, {
+            "name": "Digisoft",
+            "designation": "Web Designer",
+            "duration": "January 2009 - August 2010",
+            "summary": "Worked independently on designing and developing static websites. Worked with clients like Jaypee Cement, Flex Foods & many more reputed companies. Also worked on Joomla template customization & Search Engine Optimization."
+        }]
+    },
+
+
+    "presence": {
+        "heading": "on the web",
+        "description": [{
+            "name": "dribbble",
+            "url": "https://dribbble.com/svsdesigns",
+            "username": "svsdesigns"
+        }, {
+            "name": "behance",
+            "url": "https://www.behance.net/svsdesigns",
+            "username": "svsdesigns"
+        }, {
+            "name": "linkedin",
+            "url": "https://in.linkedin.com/in/svsdesigns",
+            "username": "svsdesigns"
+        }, {
+            "name": "stackoverflow",
+            "url": "http://stackoverflow.com/users/1160568/svs",
+            "username": "svs"
+        }, {
+            "name": "flickr",
+            "url": "https://www.flickr.com/photos/svsclicks",
+            "username": "svsdesigns"
+        }]
+    }
+
+}

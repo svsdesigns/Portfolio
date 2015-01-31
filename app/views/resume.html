@@ -1,103 +1,58 @@
 <div class="resume">
     <div class="wrapper">
         <div>
-            <h1>Surendra Vikram Singh</h1>
-            <h2 class="designation">User Interface Developer</h2>
+            <h1>{{resumeData.name}}</h1>
+            <h2 class="designation">{{resumeData.designation}}</h2>
         </div>
 
         <div class="content">
             <div class="row">
                 <div class="lap_1_2">
-                    <h3>About</h3>
-                    <p>A self-taught UI Developer with 6 Yrs of experience in developing
-                        bug-free, performance optimized &amp; responsive web applications
-                        with pixel-perfect integration. Recently worked on Facebook,
-                        Behance &amp; 500px API and integrated them with AngularJS.
-                        I'm looking for a company working on Cutting-edge technologies
-                        &amp; focused on quality, where I can develop and implement my
-                        knowledge</p>
-                    <h3>skills</h3>
+
+                    <!-- About -->
+                    <h3>{{resumeData.heading}}</h3>
+                    <p>{{resumeData.about}}</p>
+
+                    <!-- Skills -->
+                    <h3>{{resumeData.skills.heading}}</h3>
                     <ul class="list_reset list_resume">
-                        <li>
-                            <h4>Adobe Photoshop</h4>
-                            <span class="duration">Intermediate</span>
+                        <li ng-repeat="skill in resumeData.skills.description">
+                            <h4>{{skill.name}}</h4>
+                            <span class="duration">{{skill.level}}</span>
                         </li>
-                        <li>
-                            <h4>Adobe Illustrator</h4>
-                            <span class="duration">Intermediate</span>
-                        </li>
-                        <li>
-                            <h4>HTML &amp; CSS</h4>
-                            <span class="duration">Proficient</span>
-                        </li>
-                        <li>
-                            <h4>Javascript</h4>
-                            <span class="duration">Intermediate</span>
+                    </ul>
+                    
+                    <!-- Education -->
+                    <h3>{{resumeData.education.heading}}</h3>
+                    <ul class="list_reset list_resume">
+                        <li ng-repeat="edu in resumeData.education.description">
+                            <h4>{{edu.name}}</h4>
+                            <span class="duration">{{edu.duration}}</span>
                         </li>
                     </ul>
 
-                    <h3>Education</h3>
-                    <ul class="list_reset list_resume">
-                        <li>
-                            <h4>Diploma In Web Designing</h4>
-                            <span class="duration">TGC, New Delhi- 2008-2009</span>
-                        </li>
-                        <li>
-                            <h4>CSIT, Bhilai- 2003-2007</h4>
-                            <span class="duration">B.E In Electrical &amp; Electronics</span>
-                        </li>
-                    </ul>
-                    <h3>On the Web</h3>
+                    <!-- Web Presence -->
+                    <h3>{{resumeData.presence.heading}}</h3>
                     <ul class="list_reset list_resume list_inline list_portfolio">
-                        <li><a href="https://dribbble.com/svsdesigns"><i class="fa fa-lg fa-dribbble"></i> <span>svsdesigns</span></a></li>
-                        <li><a href="https://www.behance.net/svsdesigns"><i class="fa fa-lg fa-behance"></i> <span>svsdesigns</span></a></li>
-                        <li><a href="https://in.linkedin.com/in/svsdesigns"><i class="fa fa-lg fa-linkedin"></i> <span>svsdesigns</span></a></li>
-                        <li><a href="http://stackoverflow.com/users/1160568/svs"><i class="fa fa-lg fa-stack-exchange"></i> <span>svs</span></a></li>
-                        <li><a href="https://www.flickr.com/photos/svsclicks"><i class="fa fa-lg fa-flickr"></i> <span>svsclicks</span></a></li>
+                        <li ng-repeat="service in resumeData.presence.description">
+                            <a ng-href="{{service.url}}" title="{{service.name}}">
+                                <i class="fa fa-lg {{'fa-'+service.name}}"></i> 
+                                <span>{{service.username}}</span>
+                            </a>
+                        </li>
                     </ul>
+                    
                 </div>
+
                 <div class="lap_1_2">
-                    <h3>Work Experience</h3>
+                    <!-- Work Experience -->
+                    <h3>{{resumeData.work.heading}}</h3>
                     <ul class="list_reset list_resume">
-                        <li>
-                            <h4>Synechron / <i>Sr. Associate - Software</i></h4>
-                            <span class="duration">April 2013 - September 2014</span>
-                            <p>Developed complex, cross-browser compatible and
-                                responsive websites using SASS, Grunt and custom
-                                Boilerplate for code maintenance and seamless workflow.
-                                Worked on projects like Alcatel-lucent, SABMiller, Sainsbury,
-                                NATS, UAE PMO, MSL Group UK &amp; 24/7 Real Media
-                            </p>
-                        </li>
-                        <li>
-                            <h4>Fabulloso / <i>UI Designer/Developer</i></h4>
-                            <span class="duration">December 2011 - April 2013</span>
-                            <p>Designed, developed and implemented themes for Magento
-                                &amp; Wordpress. Keeping user-centric designs in mind developed
-                                interactive features &amp; easy to use interfaces using the latest
-                                web technologies and various UX techniques. Optimized the
-                                code for better performance and cross-browser
-                                compatibilities. Websites showcased by ELLE &amp; The Hindu.</p>
-                        </li>
-                        <li>
-                            <h4>Knowlarity Communication / <i>UI Designer/Developer</i></h4>
-                            <span class="duration">September 2010 - December 2011</span>
-                            <p>Responsible for front-end design &amp; development of complex
-                                web based applications in coordination with developers.
-                                Developed templates using the latest technologies (HTML5,
-                                CSS3 &amp; jQuery). Designed Android User interface for one of
-                                the major Government projects.</p>
-                        </li>
-                        <li>
-                            <h4>Digisoft Pvt. Ltd. / <i>Web Designer</i></h4>
-                            <span class="duration">January 2009 - August 2010</span>
-                            <p>Worked independently on designing and developing static
-                                websites. Worked with clients like Jaypee Cement, Flex Foods
-                                &amp; many more reputed companies. Also worked on Joomla
-                                template customization &amp; Search Engine
-                                Optimization.</p>
-                        </li>
-                        
+                        <li ng-repeat="company in resumeData.work.description">
+                            <h4>{{company.name}} / <i>{{company.designation}}</i></h4>
+                            <span class="duration">{{company.duration}}</span>
+                            <p>{{company.summary}}</p>
+                        </li>                        
                     </ul>
                 </div>
             </div>
