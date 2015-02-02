@@ -1,4 +1,15 @@
-/* bulletproof font-face syntax */
+/* bulletproof font-face syntax 
+@font-face {
+	font-family: 'font';
+	src: url('/path/font.eot');
+	src: url('/path/font.eot?#iefix') format('embedded-opentype'),
+		 url('/path/font.woff') format('woff'),
+		 url('/path/font.ttf') format('truetype'),
+		 url('/path/font.svg#font') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+*/
 
 /* vars/mixins for sass and css reset */
 
@@ -180,18 +191,6 @@ textarea {
 	min-height: 1px;
 	padding-left: 1em; /* 10px */
 	width: 100%;
-}
-
-.palm_1_2 {
-	width: 50%;
-}
-
-.palm_full {
-	width: 100%;
-}
-
-.push_palm_1_2 {
-	margin-left: 50%;
 }
 
 /* ---------------------------------------- Site ---------------------------------------- */
@@ -1213,27 +1212,22 @@ h1,
 	width: 100%;
 }
 
-/* --------------------------- Offsets */
-
-.push_tab_1_6 {
-	margin-left: 16.666666666666664%;
-}
-
-.push_tab_1_3 {
-	margin-left: 33.33333333333333%;
-}
-
-.push_tab_1_2 {
-	margin-left: 50%;
-}
-
-.push_tab_2_3 {
-	margin-left: 66.66666666666666%;
-}
-
-.push_tab_5_6 {
-	margin-left: 83.33333333333334%;
-}
+/* --------------------------- Offsets 
+  .push_tab_1_6 {
+       margin-left: 16.666666666666664%;
+  }
+  .push_tab_1_3 {
+       margin-left: 33.33333333333333%;
+  }
+  .push_tab_1_2 {
+       margin-left: 50%;
+  }
+  .push_tab_2_3 {
+       margin-left: 66.66666666666666%;
+  }
+  .push_tab_5_6 {
+       margin-left: 83.33333333333334%;
+  }*/
 
 }
 
@@ -1267,27 +1261,22 @@ h1,
 	width: 100%;
 }
 
-/* --------------------------- Offsets */
-
-.push_lap_1_6 {
-	margin-left: 16.666666666666664%;
-}
-
-.push_lap_1_3 {
-	margin-left: 33.33333333333333%;
-}
-
-.push_lap_1_2 {
-	margin-left: 50%;
-}
-
-.push_lap_2_3 {
-	margin-left: 66.66666666666666%;
-}
-
-.push_lap_5_6 {
-	margin-left: 83.33333333333334%;
-}
+/* --------------------------- Offsets 
+  .push_lap_1_6 {
+       margin-left: 16.666666666666664%;
+  }
+  .push_lap_1_3 {
+       margin-left: 33.33333333333333%;
+  }
+  .push_lap_1_2 {
+       margin-left: 50%;
+  }
+  .push_lap_2_3 {
+       margin-left: 66.66666666666666%;
+  }
+  .push_lap_5_6 {
+       margin-left: 83.33333333333334%;
+  }*/
 
 h1,
 .h1 {
