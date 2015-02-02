@@ -37,7 +37,7 @@
             q = $q.defer();
             $http({
                 method: 'jsonp',
-                url: 'http://www.behance.net/v2/users/' + user + '/projects',
+                url: 'https://www.behance.net/v2/users/' + user + '/projects',
                 params: {
                     client_id: apiKey,
                     callback: 'JSON_CALLBACK',

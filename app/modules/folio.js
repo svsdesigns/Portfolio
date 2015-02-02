@@ -12,7 +12,7 @@
 
         // Calling all the Robots
         window.onload = function () {
-
+            console.log('started');
             Behance.getProjects();
 
             FiveHundred.getPhotos(function (fhPx) {
