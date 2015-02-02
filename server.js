@@ -8,7 +8,7 @@ var express = require("express");
 
 var app = express();
 
-app.use(compression())
+app.use(compression());
 
 app.use(express.static(process.env.PWD)); 
 app.get("/", function(request, response) {
