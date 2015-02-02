@@ -14,7 +14,7 @@ var oneDay = 86400000;
 
 app.use(express.static(__dirname + '/images', { maxAge: oneDay }));
 
-app.use(express.static(process.env.PWD)); 
+//app.use(express.static(process.env.PWD)); 
 app.get("/", function(request, response) {
     response.send("Hello SVS!");
 });
