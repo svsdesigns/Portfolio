@@ -10,12 +10,8 @@ var app = express();
 
 app.use(compression());
 
-
-
 app.use(express.static(process.env.PWD)); 
-var oneDay = 86400000;
 
-app.use(express.static(__dirname + '/images', { maxAge: oneDay }));
 app.get("/", function(request, response) {
     response.send("Hello SVS!");
 });

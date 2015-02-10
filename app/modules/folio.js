@@ -12,12 +12,10 @@
 
         // Calling all the Robots
         window.onload = function () {
-            console.log('started');
             Behance.getProjects();
 
             FiveHundred.getPhotos(function (fhPx) {
                 if (fhPx.success) {
-                    //console.log('Data Received');
                 } else {
                     alert('Unable to complete request: ' + fhPx.status + ' - ' + fhPx.error_message);
                 }
