@@ -37,7 +37,7 @@
                 q = $q.defer();
                 $http({
                     method: 'get',
-                    url: '/#/app/data/resume.json'
+                    url: 'app/data/resume.json'
                 })
                 .success(function (data) {
                     $window.sessionStorage.setItem('bioData', JSON.stringify(data));
