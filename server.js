@@ -1,4 +1,4 @@
-require('newrelic');
+//require('newrelic');
 console.log("starting");
 var port = process.env.PORT || 5000;
 process.env.PWD = process.cwd();
