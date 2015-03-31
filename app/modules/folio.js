@@ -3,7 +3,7 @@
     angular.module('folio', ['ngRoute', 'ngAnimate', 'modResume', 'modPhotos', 'modWeb', 'modHome'])
 
         .run(['$rootScope', '$window', '$location', '$routeParams', 'Behance', 'FiveHundred', function ($rootScope, $window, $location, $routeParams, Behance, FiveHundred) {
-
+            //console.log('run');
             $rootScope.$on('$routeChangeSuccess', function (newRoute, oldRoute) {
                  check.hashPath = $location.path();
              });
@@ -25,7 +25,7 @@
     }])
 
         .config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
-
+            //console.log('congig');
         $routeProvider.when('/', {
             templateUrl: 'app/views/home.html',
             controller: 'Home'
