@@ -208,7 +208,7 @@ html {
 
 body {
 	opacity: 1;
-	color: #333333;
+	color: #333;
 	font-family: "Open Sans", sans-serif;
 	font-size: 62.5%; /* 10px */
 	font-weight: 300;
@@ -248,7 +248,7 @@ h1,
 	-moz-transform: rotate(-10deg);
 	-o-transform: rotate(-10deg);
 	transform: rotate(-10deg);
-	color: white;
+	color: #fff;
 	padding-top: 0.4em;
 	padding-bottom: 0.5em;
 	transition: all 0s linear;
@@ -405,7 +405,7 @@ ul li ol li {
 }
 
 .nav_primary li a {
-	color: #666666;
+	color: #666;
 	display: block;
 	padding: 17px 5px 17px 15px;
 	text-decoration: none;
@@ -419,24 +419,24 @@ ul li ol li {
 	bottom: -1px;
 	width: 0%;
 	height: 1px;
-	background-color: #333333;
+	background-color: #333;
 	transition: all 0.2s ease;
 }
 
 .no-touch .nav_primary li:hover span {
 	width: 100%;
-	color: #333333;
+	color: #333;
 	transition: all 0.3s ease;
 }
 
 .no-touch .nav_primary li:hover a {
-	color: #333333;
+	color: #333;
 }
 
 .nav_primary li.current span,
 .nav_primary li.current a {
 	width: 100%;
-	color: #333333;
+	color: #333;
 }
 
 /* ---------------------------------------- Header ---------------------------------------- */
@@ -445,7 +445,7 @@ ul li ol li {
 	position: fixed;
 	width: 100%;
 	height: 45px;
-	background: black;
+	background: #000;
 	opacity: 0.3;
 	top: 0;
 	left: 0;
@@ -462,24 +462,24 @@ ul li ol li {
 /* ---------------------------------------- Section (.section{})---------------------------------------- */
 
 .resume {
-	color: #333333;
+	color: #333;
 	font-family: "Open Sans", sans-serif;
 	padding: 80px 0;
 }
 
 .resume .content {
-	background-color: white;
+	background-color: #fff;
 	font-weight: 400;
 	padding: 30px 0;
 }
 
 .resume .designation {
-	color: #666666;
+	color: #666;
 }
 
 .resume .designation:before,
 .resume .designation:after {
-	background-color: #666666;
+	background-color: #666;
 }
 
 .resume h1,
@@ -490,7 +490,7 @@ ul li ol li {
 .resume .h3,
 .resume p,
 .resume .p {
-	color: #333333;
+	color: #333;
 	font-family: "Open Sans",sans-serif;
 }
 
@@ -527,13 +527,13 @@ ul li ol li {
 .resume h4 i,
 .resume .h4 i {
 	font-size: 0.8em;
-	color: #666666;
+	color: #666;
 }
 
 .resume .duration {
 	font-size: 1.2em;
 	font-style: italic;
-	color: #666666;
+	color: #666;
 }
 
 .resume p {
@@ -547,7 +547,7 @@ ul li ol li {
 }
 
 .list_portfolio a {
-	color: #333333;
+	color: #333;
 	text-decoration: none;
 	padding: 10px;
 }
@@ -571,7 +571,7 @@ ul li ol li {
 .hero_wrapper {
 	height: 100%;
 	min-height: 100%;
-	background-color: black;
+	background-color: #000;
 }
 
 .no-touch .hero_wrapper .wrapper {
@@ -611,7 +611,7 @@ ul li ol li {
 }
 
 .hero {
-	background: no-repeat 0 top #666666;
+	background: no-repeat 0 top #666;
 	background-position: fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -632,14 +632,14 @@ ul li ol li {
 
 .designation {
 	font-size: 1.5em;
-	color: white;
+	color: #fff;
 	font-style: italic;
 	text-align: center;
 }
 
 .designation:before,
 .designation:after {
-	background-color: white;
+	background-color: #fff;
 	content: "";
 	display: inline-block;
 	height: 1px;
@@ -681,7 +681,7 @@ ul li ol li {
 }
 
 .list_social .fa {
-	color: white;
+	color: #fff;
 }
 
 .list_social a {
@@ -707,7 +707,7 @@ ul li ol li {
 
 .module_slidenav {
 	background: #fff;
-	box-shadow: 1px 1px 5px #333333;
+	box-shadow: 1px 1px 5px #333;
 	height: 100%;
 	position: fixed;
 	right: 0;
@@ -744,7 +744,7 @@ ul li ol li {
 .avatar {
 	border: 3px solid #fff;
 	border-radius: 50%;
-	box-shadow: 0 1px 3px #666666;
+	box-shadow: 0 1px 3px #666;
 	height: 70px;
 	margin: 0 auto;
 	width: 70px;
@@ -768,7 +768,7 @@ ul li ol li {
 
 .info {
 	text-align: center;
-	color: white;
+	color: #fff;
 	padding-top: 20px;
 	font-size: 1.3em;
 	font-weight: 400;
@@ -785,7 +785,7 @@ ul li ol li {
 .module_powered {
 	text-align: center;
 	padding: 20px 0;
-	color: #666666;
+	color: #666;
 }
 
 .module_powered ul {
@@ -831,7 +831,7 @@ ul li ol li {
 	margin-bottom: 10px;
 	overflow: hidden;
 	position: relative;
-	background-color: white;
+	background-color: #fff;
 }
 
 .image_wrapper {
@@ -862,7 +862,7 @@ ul li ol li {
 }
 
 .image_wrapper span {
-	color: white;
+	color: #fff;
 	font-size: 1.5em;
 	text-transform: uppercase;
 	text-align: center;
@@ -919,7 +919,7 @@ ul li ol li {
 }
 
 .details ul {
-	color: #666666;
+	color: #666;
 	display: inline-block;
 	margin: 0;
 	padding: 0;
@@ -972,7 +972,7 @@ textarea {
 /* ---------------------------------------- Buttons ---------------------------------------- */
 
 .header_btn_wrapper {
-	color: white;
+	color: #fff;
 	position: fixed;
 	right: 6px;
 	top: 0;
@@ -1010,7 +1010,7 @@ textarea {
 	display: block;
 	width: 100%;
 	height: 2px;
-	background-color: white;
+	background-color: #fff;
 	margin-bottom: 3px;
 }
 
@@ -1094,14 +1094,14 @@ textarea {
 	padding: 15px 10px;
 	text-decoration: none;
 	width: 175px;
-	border: 1px solid #666666;
+	border: 1px solid #666;
 	transition: all 0.3s ease;
 	margin-top: 40px;
 }
 
 .btn_download:hover {
-	color: #333333;
-	border-color: #333333;
+	color: #333;
+	border-color: #333;
 }
 
 .btn_download span {
@@ -1159,6 +1159,8 @@ html {
 /* OOCSS and utilities */
 
 /* print stylesheet */
+
+/*# sourceMappingURL=style.css.map */
 
 @media screen and (min-width: 29.9375em) {
 

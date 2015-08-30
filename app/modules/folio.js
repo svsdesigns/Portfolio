@@ -150,18 +150,17 @@
                 if (check.hashPath !== '/resume') {
 
                     var scrlPosition = document.body.scrollTop ? document.body.scrollTop : document.documentElement.scrollTop,
-                        svs = 1 - (scrlPosition / heg),
+                        svs = 1 - (scrlPosition / heg)*2,
                         header = document.querySelector('.hero'),
                         heading = document.querySelector('.hero h1'),
-                        tp = (100 - (svs * 100)) * 7;
-
+                        tp = (100 - (svs * 100))*0.25;
                     //header.style.backgroundPosition = '0 ' + tp + 'px';
                     if (svs > 0) {
-                        header.style.WebkitTransform = "translate3d(0, " + tp + "px, 0)";
-                        header.style.MozTransform = "translate3d(0, " + tp + "px, 0)";
-                        header.style.transform = "translate3d(0, " + tp + "px, 0)";
+                        heading.style.WebkitTransform = "translate3d(0, " + tp + "px, 0) rotate(-10deg)";
+                        heading.style.MozTransform = "translate3d(0, " + tp + "px, 0) rotate(-10deg)";
+                        heading.style.transform = "translate3d(0, " + tp + "px, 0) rotate(-10deg)";
                         heading.style.opacity = svs;
-                        header.style.opacity = svs;
+                        heading.style.opacity = svs;
                     }
                 }
 
