@@ -29,8 +29,12 @@
 	.logo-wrapper {
 		padding: 24px 0;
 	}
+	.logo {
+		padding-left: 12px;
+	}
 	.browser-link{
 		text-align: right;
+		padding-right: 12px;
 	}
 	.browser-link a{
 		/*color: #212121;*/
@@ -210,17 +214,19 @@
     z-index: 1;
     text-align: center;
 	}
+	.loan-progress__status-icon img{
+		width: 12px;
+		margin-top: 8px;
+	}
+
 	.loan-progress__status--inprocess .loan-progress__status-icon {
-    background: url(images/img_clock.png) no-repeat center center #fcb44d;
-    background-size: 12px;
+    background-color: #fcb44d;
 	}
 	.loan-progress__status--done .loan-progress__status-icon {
-    background: url(images/icon_check_white.png) no-repeat center center #00d77e;
-    background-size: 12px;
+    background-color: #00d77e;
 	}
 	.loan-progress__status--approved .loan-progress__status-icon {
-    background: url(images/img_clock.png) no-repeat center center #cc595b;
-    background-size: 12px;
+    background-color: #cc595b;
 	}
 	.loan-progress__status-desc {
     text-transform: uppercase;
@@ -344,7 +350,9 @@
 								<h2 class="section__heading txt-bold">Your current Loan Status</h2>
 								<ul class="loan-progress__status">
 					  			<li class="loan-progress__status--active loan-progress__status--inprocess">
-					  				<div class="loan-progress__status-icon"></div>
+					  				<div class="loan-progress__status-icon">
+					  					<img src="images/img_clock.png" width="12">
+					  				</div>
 					  				<p class="loan-progress__status-desc">In progress</p>
 					  				<div class="loan-progress__status-info visible-xs visible-sm">
 					  					<p class="loan-progress__heading">You have <b class="font-semibold font-uppercase">2 PENDING ACTIONS</b> to move to next step.</p>
