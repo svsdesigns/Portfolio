@@ -9,14 +9,14 @@
 		margin: 0;
 	}
 	td{
-		font-family: Roboto, helvetica, arial, sans-serif;
+		font-family: "Open Sans", helvetica, arial, sans-serif;
     	color: #666;
     	font-size: 14px !important;
     	line-height: 1.4 !important;
 	}
 	a{
 		text-decoration: none;
-		color: #ef534e;
+		color: #1dbdd7;
 	}
 	.td-wrapper {
 		background-color: #e4e4e4;
@@ -27,14 +27,15 @@
 		width: 580px;
 	}
 	.logo-wrapper {
-		padding: 12px 0;
+		padding: 24px 0;
 	}
 	.browser-link{
 		text-align: right;
 	}
 	.browser-link a{
-		color: #212121;
-		text-decoration: underline;
+		/*color: #212121;*/
+		font-size: 12px;
+		/*text-decoration: underline;*/
 	}
 	.content-table{
 		background-color: #fff;
@@ -46,24 +47,25 @@
 	}
 	/*Banner styles*/
 	.banner {
-		background-color: #ef534e;
-    height: 480px;
+		background-color: #1dbdd7;
     border-radius: 4px 4px 0 0;
     text-align: center;
     color: #fff;
-    display: table-cell;
     width: 580px;
-    vertical-align: middle;
+    padding: 48px 0;
 	}
 	.banner__content {
-		display: inline-block;
-		vertical-align: middle;
 	}
 	.banner__avatar {
 		width: 100px;
-		/*border-radius: 50%;*/
-		/*border: 4px solid rgba(255, 255, 255, 0.5);*/
-		/*box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.7);*/
+	}
+	.banner__heading {
+		font-size: 36px;
+		font-weight: 500;
+	}
+	.banner__desc {
+		font-size: 26px;
+		font-weight: 300;
 	}
 	.footer{
 		text-align: center;
@@ -75,7 +77,54 @@
 	}
 	.section {
 		background-color: #fff;
-		padding: 30px 24px;
+		padding: 72px 24px;
+		border-bottom: 1px solid #f4f4f4;
+
+	}
+	.section__heading {
+		font-size: 30px;
+		line-height: 36px;
+		font-weight: 300;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+	.section__desc {
+		font-size: 26px;
+		color: #999;
+		font-weight: 300;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+	.section__inner {
+		margin-top: 95px;
+	}
+	.inner-heading {
+		font-size: 26px;
+		text-transform: uppercase;
+		margin: 0;
+		line-height: 1;
+		margin-bottom: 30px;
+	}
+	.inner-icon {
+		width: 40px;
+		height: 40px;
+		margin-bottom: 24px;
+	}
+	.inner-desc {
+		font-size: 26px;
+		line-height: 36px;
+		color: #999;
+		font-weight: 300;
+	}
+	.leading-text {
+		margin-bottom: 40px;
+		margin-top: 48px;
+	}
+	.txt-bold {
+		font-weight: 600;
+	}
+	.img-border {
+		display: block;
 	}
 </style>
 </head>
@@ -90,7 +139,7 @@
 							<table border="0" cellspacing="0" cellpadding="0" width="100%">
 								<tr>
 									<td class="logo">
-										<img src="nearbuy.png" alt="nearbuy" class="logo" width="150px">
+										<img src="images/logo.png" alt="nearbuy" class="logo" width="70">
 									</td>
 									<td class="browser-link">
 										<a href="#" target="_blank" class="deal__rejected">View on Browser</a>
@@ -99,10 +148,10 @@
 								<!-- BORDER IMAGE -->
 								<tr>
 									<td>
-										<img src="border.png" class="images/border-img">
+										<img src="images/border.png" class="img-border">
 									</td>
 									<td>
-										<img src="border.png" class="images/border-img">
+										<img src="images/border.png" class="img-border">
 									</td>
 								</tr>
 							</table>
@@ -116,7 +165,7 @@
 								<div class="banner__content">
 									<h1 class="banner__heading">Hi, Surendra</h1>
 									<img src="images/2.png" class="banner__avatar" >
-									<h2 class="banner__desc">Welcome to Nearbuy</h2>
+									<h2 class="banner__desc">Welcome to Quiklo</h2>
 								</div>
 							</div>
 						</td>
@@ -126,30 +175,32 @@
 					<tr>
 						<td>
 							<div class="section txt-center">
-								<img src="images/app.png" class="section__img" width="200px">
-								<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam commodo metus</h2>
-								<p>Quisque at ligula dolor. Integer vitae erat erat. Mauris sed ornare erat, id efficitur lacus. Nam id justo et purus fermentum auctor.</p>
+								<img src="images/mobile.jpg" class="section__img" width="150">
+								<h2 class="section__heading leading-text">We have received your Loan Application for <b>iPhone 6S</b>.</h2>
+								<p class="section__desc"><b>Salman Khan</b> will be your contact person from Quiklo. He can be reached at <b>+91 9871628976</b>.</p>
 							</div>
 
 							<div class="section txt-center">
-								<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam commodo metus</h2>
-								
+								<h2 class="section__heading txt-bold">Here is how the Loan Approval Process will work</h2>
+								<br/>
+								<br/>
+								<br/>
 								<div class="section__inner">
-									<img src="images/avatar.jpeg" width="50">
-									<h3>Lorem ipsum dolor sit amet</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam commodo metus at suscipit gravida. Etiam pulvinar vestibulum consequat. Ut quis interdum orci, in scelerisque nibh.</p>
+									<img src="images/icon-1.png" width="40" class="inner-icon">
+									<h3 class="inner-heading">Loan Approval</h3>
+									<p class="inner-desc">We will process your Loan Application to check for your eligibility. In case, we need further information, we will ask them from you. Providing timely information will help in faster approvals. It is best to keep your Aadhar Card and Student Id Card handy during application. We normally approve applications in 2 days.</p>
 								</div>
 
 								<div class="section__inner">
-									<img src="images/avatar.jpeg" width="50">
-									<h3>Lorem ipsum dolor sit amet</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam commodo metus at suscipit gravida. Etiam pulvinar vestibulum consequat. Ut quis interdum orci, in scelerisque nibh.</p>
+									<img src="images/icon-2.png" width="40" class="inner-icon">
+									<h3 class="inner-heading">ORDER PLACING</h3>
+									<p class="inner-desc">Once your Loan is approved, and you give us a go ahead, we will place the order for your product and you once your Order is ready. The order gets ready in 2 days. Online Orders might take an extra day or two.</p>
 								</div>
 
 								<div class="section__inner">
-									<img src="images/avatar.jpeg" width="50">
-									<h3>Lorem ipsum dolor sit amet</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam commodo metus at suscipit gravida. Etiam pulvinar vestibulum consequat. Ut quis interdum orci, in scelerisque nibh.</p>
+									<img src="images/icon-3.png" width="40" class="inner-icon">
+									<h3 class="inner-heading">LOAN FULFILLMENT</h3>
+									<p class="inner-desc">Viola, this means that your Order is ready. You just need to pick it up. At this point, you will have to make the down payment for the Loan and sign a few documents pertaining to the Loan. We will explain your EMI schedule and various payment options. </p>
 								</div>
 							</div>
 						</td>
