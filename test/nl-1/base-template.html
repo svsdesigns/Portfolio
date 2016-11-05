@@ -213,12 +213,14 @@
     height: 26px !important;
     background-color: #e3e3e3;
     border-radius: 50% !important;
-    /*border: 3px solid #fff;*/
-    float: left;
+    /*border: 3px solid #fff;
+    float: left;*/
+    display: inline-block;
     position: relative;
     z-index: 1;
     text-align: center;
     padding-top: 4px !important;
+    vertical-align: top;
 	}
 	.loan-progress__status-icon img{
 		width: 12px;
@@ -237,9 +239,11 @@
 	.loan-progress__status-desc {
     text-transform: uppercase;
     margin-bottom: 0;
-    margin-top: 6px;
-    padding-left: 48px;
+    margin-top: 0;
+    padding-left: 13px !important;
     color: #999999;
+    display: inline-block;
+    vertical-align: middle;
 	}
 	.loan-progress__status--active .loan-progress__status-desc {
     color: #666666;
