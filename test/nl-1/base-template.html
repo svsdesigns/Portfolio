@@ -67,11 +67,11 @@
 		font-size: 26px;
 		font-weight: 300;
 	}
-	.footer{
+	/*.footer{
 		text-align: center;
     	padding: 30px 0 10px;
     	background-color: #efefef;
-	}
+	}*/
 	.txt-center {
 		text-align: center;
 	}
@@ -116,6 +116,130 @@
 		color: #999;
 		font-weight: 300;
 	}
+	.more-info {
+		background-color: #fff;
+		text-align:center;
+		padding: 48px 0;
+	}
+	.more-info__heading {
+		font-size: 36px;
+		margin: 0;
+		font-weight: 300;
+	}
+	.more-info__desc {
+		font-size: 26px;
+		margin: 0;
+		font-weight: 300;
+	}
+	.footer {
+		padding: 60px 0;
+		text-align: center;
+	}
+	.footer__heading {
+		font-size: 26px;
+		margin: 0;
+		color: #999;
+	}
+	.footer__desc {
+		font-size: 26px;
+		margin: 0;
+		font-weight: 300;
+		color: #999;
+	}
+	.download {
+		text-align: center;
+	}
+	.social {
+		text-align: center;
+		padding: 90px 0 72px;
+	}
+	.social a {
+		width: 50px;
+		margin-right: 18px;
+	}
+	.social__heading {
+		margin: 0;
+		margin-bottom: 12px;
+		color: #999;
+		font-size: 24px;
+		font-weight: 300;
+	}
+	/*Loan progress*/
+	.loan-progress__status {
+    margin: 0;
+    list-style: none;
+    position: relative;
+    padding: 0;
+    text-align: left;
+    margin-top: 94px;
+	}
+	.loan-progress__heading {
+		font-size: 13px;
+		color: #666;
+		margin-bottom: 0;
+	}
+	.loan-progress__desc {
+		font-size: 13px;
+		color: #999;
+		margin-bottom: 12px;
+		margin-top: 6px;
+	}
+	.loan-progress__status li {
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+	}
+
+	.loan-progress__status .loan-progress__divider {
+    width: 4px;
+    background-color: #e3e3e3;
+    position: absolute;
+    left: 16px;
+    top: 6px;
+    height: calc(100% - 12px);
+    z-index: 0;
+	}
+	.loan-progress__status-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #e3e3e3;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    float: left;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+	}
+	.loan-progress__status--inprocess .loan-progress__status-icon {
+    background: url(images/img_clock.png) no-repeat center center #fcb44d;
+    background-size: 12px;
+	}
+	.loan-progress__status--done .loan-progress__status-icon {
+    background: url(images/icon_check_white.png) no-repeat center center #00d77e;
+    background-size: 12px;
+	}
+	.loan-progress__status--approved .loan-progress__status-icon {
+    background: url(images/img_clock.png) no-repeat center center #cc595b;
+    background-size: 12px;
+	}
+	.loan-progress__status-desc {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    margin-top: 6px;
+    padding-left: 48px;
+    color: #999999;
+	}
+	.loan-progress__status--active .loan-progress__status-desc {
+    color: #666666;
+	}
+	.loan-progress__status-info {
+    margin-left: 30px;
+    padding-left: 18px;
+    margin-top: 24px;
+	}
+	.loan-progress__status--inprocess .loan-progress__status-highlight, .loan-progress__status--inprocess.loan-progress__status-highlight {
+    color: #fcb44d;
+	}
 	.leading-text {
 		margin-bottom: 40px;
 		margin-top: 48px;
@@ -125,6 +249,42 @@
 	}
 	.img-border {
 		display: block;
+	}
+	.btn {
+		display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    line-height: 18px;
+    font-size: 14px;
+    border-radius: 42px;
+    outline: 0;
+    transition: all 0.3s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	}
+	.btn-primary {
+    color: #fff;
+    background-color: #00bdd7;
+    border-color: #00bdd7;
+    box-shadow: 0 10px 10px rgba(0, 189, 215, 0.14);
+    transition: all 0.3s ease;
+    outline: 0;
+	}
+	.btn-sm {
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 42px;
 	}
 </style>
 </head>
@@ -163,7 +323,7 @@
 						<td>
 							<div class="banner">
 								<div class="banner__content">
-									<h1 class="banner__heading">Hi, Surendra</h1>
+									<h1 class="banner__heading">Hi, Avinash!</h1>
 									<img src="images/2.png" class="banner__avatar" >
 									<h2 class="banner__desc">Welcome to Quiklo</h2>
 								</div>
@@ -181,10 +341,37 @@
 							</div>
 
 							<div class="section txt-center">
+								<h2 class="section__heading txt-bold">Your current Loan Status</h2>
+								<ul class="loan-progress__status">
+					  			<li class="loan-progress__status--active loan-progress__status--inprocess">
+					  				<div class="loan-progress__status-icon"></div>
+					  				<p class="loan-progress__status-desc">In progress</p>
+					  				<div class="loan-progress__status-info visible-xs visible-sm">
+					  					<p class="loan-progress__heading">You have <b class="font-semibold font-uppercase">2 PENDING ACTIONS</b> to move to next step.</p>
+					  					<p class="loan-progress__desc">Time to move to next step <span class="loan-progress__status-highlight">2 Days <i class="fa fa-exclamation-circle" aria-hidden="true"></i></span></p>
+
+					  					<button class="btn btn-sm btn-primary">Pending Actions</button>
+
+					  				</div>
+									</li>
+					  			<li>
+					  				<div class="loan-progress__status-icon"></div>
+					  				<p class="loan-progress__status-desc">Approved</p>
+					  			</li>
+					  			<li>
+					  				<div class="loan-progress__status-icon"></div>
+					  				<p class="loan-progress__status-desc">Order placed</p>
+					  			</li>
+					  			<li>
+					  				<div class="loan-progress__status-icon"></div>
+					  				<p class="loan-progress__status-desc">fullfilled</p>
+					  			</li>
+					  			<li class="loan-progress__divider"></li>
+					  		</ul>
+							</div>
+
+							<div class="section txt-center">
 								<h2 class="section__heading txt-bold">Here is how the Loan Approval Process will work</h2>
-								<br/>
-								<br/>
-								<br/>
 								<div class="section__inner">
 									<img src="images/icon-1.png" width="40" class="inner-icon">
 									<h3 class="inner-heading">Loan Approval</h3>
@@ -206,12 +393,48 @@
 						</td>
 					</tr>
 
+					<!-- more info section -->
+					<tr>
+						<td>
+							<div class="more-info">
+								<h4 class="more-info__heading">Still curious?</h4>
+								<h5 class="more-info__desc">Check out our detailed <a href="#">FAQ</a> page.</h5>
+							</div>
+						</td>
+					</tr>
+
+					
+
 					<!-- FOOTER SECTION -->
 					<tr>
 						<td class="footer">
-							© <a href="http://www.nearbuy.com/deals/delhi-ncr" target="_blank">nearbuy.com</a> is a service of: Groupon India (P) ltd. <a href="http://www.nearbuy.com/help/aboutus" target="_blank">About Us</a> | <a href="http://www.nearbuy.com/help/contactus" target="_blank">FAQ</a>
+							<h4 class="footer__heading">Thanks for using Quiklo!</h4>
+							<h5 class="footer__desc">Team Quiklo - Fueling Dreams to Reality</h5>
 						</td>
 					</tr>
+
+					<!-- Download -->
+					<tr>
+						<td class="download">
+							<a href="#">
+								<img src="images/download-icon.png" width="200">
+							</a>
+						</td>
+					</tr>
+
+					<!-- social media icons -->
+					<tr>
+						<td class="social">
+							<p class="social__heading">Stay connected with Quiklo</p>
+							<a href="#"><img src="images/icon-fb.png" width="40"></a>
+							<a href="#"><img src="images/icon-tw.png" width="40"></a>
+							<a href="#"><img src="images/icon-gplus.png" width="40"></a>
+							<a href="#"><img src="images/icon-insta.png" width="40"></a>
+							<a href="#"><img src="images/icon-pinterest.png" width="40"></a>
+							<a href="#"><img src="images/icon-youtube.png" width="40"></a>
+						</td>
+					</tr>
+
 				</table>
 			</td>
 		</tr>
