@@ -1,0 +1,617 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="hello.html">
+
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script> 
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <!-- default amp styles -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <!-- Custom amp style -->
+    <style amp-custom >
+
+      h1 {
+        
+        font-size: 30px;
+        margin-top: 12px;
+      }
+      h2 {
+        font-size: 24px;
+        margin: 12px 0;
+      }
+      h3 {
+        font-size: 18px;
+        margin: 12px 0;
+      }
+      h4 {
+        font-size: 15px;
+      }
+      p {
+        margin-top: 6px;
+        white-space: normal;
+        font-size: 12px;
+      }
+      @font-face {
+        font-family: 'montserrat';
+        font-style: normal;
+        font-weight: 200;
+        src: local('montserrat'), url(fonts/Montserrat-Regular.ttf) format('truetype');
+      }
+      body {
+        font-family: 'montserrat', serif, sans-serif;
+        background-color: #ededed;
+        padding-top: 100px;
+      }
+      .wrapper {
+        /*background-color: #fff;*/
+        margin: 12px;
+      }
+      .wrapper-lead {
+        margin-bottom: 24px;
+      }
+      .card {
+        border-radius: 3px;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        padding: 6px 12px 6px;
+      }
+      .card--reset {
+        padding: 0px;
+      }
+      .montserrat-loaded .montserrat {
+        font-family: 'montserrat', serif, sans-serif;
+      } 
+      .montserrat-loading {
+        color: blue;
+      }
+      .montserrat-loading .montserrat {
+        color: aqua;
+      }  
+      .montserrat-missing .montserrat {
+            color: red;
+      }
+      .article {
+        width: 200px;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .article__content {
+        padding: 6px;
+      }
+      div {
+        box-sizing: border-box;
+      }
+      .header-wrapper {
+        background-color: #f7f7f7;
+        box-shadow: 0 0px 5px rgba(0,0,0,0.2);
+        position: fixed;
+        width: 100%;
+        top:0;
+        z-index: 9;
+      }
+      .header {
+        background-color: #fff;
+        overflow: hidden;
+        padding: 3px 0;
+
+      }
+      .header__menu, .header__location {
+        background: transparent;
+        border: 0;
+      }
+      .header__location {
+        font-size: 13px;
+        color: #333;
+        padding: 6px;
+        font-weight: 500;
+      }
+      .header__location svg {
+        vertical-align: middle;
+      }
+      .f-left {
+        float:left;
+      }
+      .f-right {
+        float: right;
+      }
+      
+      .text-center {
+        text-align: center;
+      }
+      .gray-darker {
+        color: #333;
+      }
+      .gray-dark {
+        color: #666;
+      }
+      .gray {
+        color: #999;
+      }
+      .primary-nav {
+        text-align: center;
+        padding: 8px 0;
+        /*margin-top: 40px;*/
+      }
+      .primary-nav__label {
+        vertical-align: middle;
+        font-size: 13px;
+        font-weight: bold;
+        margin: 0 6px;
+      }
+      .toggle {
+        border: 2px solid #433e6a;
+        border-radius: 11px;
+        width: 50px;
+        height: 15px;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+      }
+      .toggle>input {
+        opacity: 0;
+        position: absolute;
+        -webkit-appearance: none;
+        border-radius: 0px;
+      }
+      .toggle__icon {
+        position: absolute;
+        left: 0;
+        border-radius: 50%;
+        width: 11px;
+        height: 11px;
+        background-color: #433e6a;
+        top: 2px;
+        left: 2px;
+        transition: all 0.2s ease-out;
+      }
+
+      .toggle > input:checked +  .toggle__icon {
+        left: calc(100% - 15px);
+      }
+      
+      .search-target {
+        background-color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 0;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+        position: fixed;
+        bottom: 50px;
+        right: 30px;
+        z-index: 2;
+        padding-top: 6px;
+        background-color: #ef534e;
+      }
+      .search-wrapper {
+        padding: 0 6px;
+        margin-top: 12px;
+        display: none;
+      }
+      .search {
+        display: block;
+        padding: 15px 6px;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid #e0e0e0;
+        border-radius: 3px;
+        box-sizing: border-box;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        margin: 0 -12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        /*border-left: 0;*/
+        position: relative;
+        border-radius: 4px;
+      }
+      .row:before {
+        content: '';
+        height: 1px;
+        width: 100%;
+        top: 50%;
+        background-color: #e0e0e0;
+        position: absolute;
+        z-index: 1;
+      }
+      .column {
+        /*background-color: #333;*/
+        width: 25%;
+        margin: 0 12px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 40px;
+        color: #666;
+        padding: 12px;
+        border-right: 1px solid #e0e0e0;
+
+      }
+      .column p {
+        font-size: 12px;
+        color: #666;
+        margin: 6px 0 0;
+      }
+      .column + hr {
+        border-top: 1px solid #e0e0e0;
+      }
+      .column:nth-child(4n) {
+        border-right: 0;
+      }
+      .row--no-gutter {
+        margin: 0;
+        /*margin-bottom: 12px;*/
+      }
+      .row--no-gutter .column {
+        margin: 0;
+      }
+
+      [amp-sidebar] {
+        z-index: 99999;
+      }
+      [class$="-mask"] {
+        display: block;
+      }
+      .brand-card {
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 12px;
+      }
+      .brand-card__img {
+        height: 100px;
+        overflow: hidden;
+      }
+      .brand-card__img img {
+        border-radius: 3px 3px 0 0;
+      }
+      .brand-card__content {
+        border: 1px solid #e0e0e0;
+        background-color: #f7f7f7;
+        padding: 12px;
+      }
+      .brand-card__heading {
+        margin: 0;
+      }
+      .brand-card__price {
+        margin: 6px 0;
+        font-size: 12px;
+        color: #5ba4da;
+      }
+
+      .img-card {
+        position: relative;
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 12px;
+      }
+      .img-card:last-child {
+        margin-bottom: 0;
+      }
+      .img-card:before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.32);
+        z-index: 1;
+      }
+      .img-card__content {
+        position: absolute;
+        top: 0;
+        color: #fff;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+      }
+      .img-card__heading {
+        text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      }
+      .img-card__price {
+        font-size: 13px;
+      }
+      .wrapper-heading {
+            margin-top: 12px;
+    margin-bottom: 18px;
+      }
+    </style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  </head>
+
+  <body>
+
+  <amp-font layout="nodisplay"
+      font-family="montserrat"
+      timeout="2000"
+      on-error-remove-class="montserrat-loading"
+      on-error-add-class="montserrat-missing"
+      on-load-remove-class="montserrat-loading"
+      on-load-add-class="montserrat-loaded">
+  </amp-font>
+  <!-- Sidebar -->
+  <amp-sidebar id='sidebar1' layout='nodisplay'>
+    <ul>
+      <li> Nav item 1</li>
+      <li> Nav item 2</li>
+      <li> Nav item 3</li>
+      <li> Nav item 4</li>
+      <li> Nav item 5</li>
+      <li> Nav item 6</li>
+      <li> Nav item 7</li>
+      <li> Nav item 8</li>
+      <li> Nav item 9</li>
+    </ul>
+  </amp-sidebar>
+  <div class="header-wrapper">
+    <div class="header">
+      <button class="header__menu f-left" on='tap:sidebar1.toggle'>
+        <svg fill="#333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </button>
+      <button class="header__location f-right">
+        <svg fill="#999" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          <path d="M0 0h24v24H0z" fill="none"/>
+        </svg>
+        Delhi/NCR
+      </button>
+
+    </div>
+    
+    <form method="post" action="https://example.com/subscribe" target="_blank">
+      <div class="primary-nav">
+        <span class="primary-nav__label">Around You</span>
+        <label class="toggle">
+          <input type="checkbox" name="">
+          <div class="toggle__icon"></div>
+        </label>
+        <span class="primary-nav__label">Outstation</span>
+      </div>
+    </form>
+  </div>
+  <div class="search-wrapper">
+    <form method="post" action="https://example.com/subscribe" target="_blank">
+      <input type="text" name="" class="search" placeholder="Search restaurants, spa, events, things to do...">
+    </form>
+  </div>
+  <button class="search-target">
+    <svg fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+    </svg>
+  </button>
+  <div class="wrapper wrapper-lead">
+    
+    <h2 class="text-center gray-darker">What's the plan?</h2>
+
+    <div class="row row--no-gutter card card--reset">
+      <div class="column">
+        <amp-img src="images/cat/artboard-9.svg"
+          width="30"
+          height="30"></amp-img>
+          <p>Eat Out!</p>
+      </div>
+       <div class="column">
+        <amp-img src="images/cat/artboard-4.svg"
+          width="30"
+          height="30"></amp-img>
+          <p>Fitness</p>
+      </div>
+       <div class="column">
+        <amp-img src="images/cat/artboard-10.svg"
+          width="30"
+          height="30"></amp-img>
+          <p>Activities</p>
+      </div>
+       <div class="column">
+        <amp-img src="images/cat/artboard-8.svg"
+          width="30"
+          height="30"></amp-img>
+          <p>Salon</p>
+      </div>
+       <div class="column">
+        <amp-img src="images/cat/artboard-5.svg"
+          width="30"
+          height="30"></amp-img>
+          <p>Movies</p>
+      </div>
+       <div class="column">
+        <amp-img src="images/cat/artboard-3.svg"
+          width="30"
+          height="30"></amp-img>
+          <p>Spa</p>
+      </div>
+       <div class="column">
+        <amp-img src="images/cat/artboard-1.svg"
+          width="30"
+          height="30"></amp-img>
+          <p>Hobbies</p>
+      </div>
+       <div class="column">
+        <amp-img src="images/cat/more.svg"
+          width="30"
+          height="30"></amp-img>
+          <p>More</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper card wrapper-lead">
+    <h3 class="text-center gray-darker wrapper-heading">Top selling brands</h3>
+
+    <div class="brand-card">
+      <div class="brand-card__img">
+        <amp-img src="images/brands/1.jpg"
+            width="840"
+            height="485" layout="responsive"></amp-img>
+      </div>
+      <div class="brand-card__content">
+        <h4 class="brand-card__heading">KFC</h4>
+        <p class="brand-card__price">Starting at 299</p>
+      </div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-card__img">
+        <amp-img src="images/brands/2.jpg"
+            width="400"
+            height="300" layout="responsive"></amp-img>
+      </div>
+      <div class="brand-card__content">
+        <h4 class="brand-card__heading">Domino's</h4>
+        <p class="brand-card__price">Starting at 299</p>
+      </div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-card__img">
+        <amp-img src="images/brands/3.jpg"
+            width="500"
+            height="334" layout="responsive"></amp-img>
+      </div>
+      <div class="brand-card__content">
+        <h4 class="brand-card__heading">Cafe coffe day</h4>
+        <p class="brand-card__price">Starting at 299</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper card wrapper-heading">
+    <h3 class="text-center gray-darker wrapper-heading">10 things to do right now</h3>
+    <div class="img-card">
+      <amp-img src="images/ttd/1.jpeg" alt="Welcome" height="420" width="700" layout="responsive"></amp-img>
+      <div class="img-card__content text-center">
+        <h3 class="img-card__heading">Lunch</h3>
+        <p class="img-card__price">&#8377;399 - &#8377;2999</p>
+      </div>
+    </div>
+    <div class="img-card">
+      <amp-img src="images/ttd/2.jpeg" alt="Welcome" height="420" width="700" layout="responsive"></amp-img>
+      <div class="img-card__content text-center">
+        <h3 class="img-card__heading">Parties &amp; Events</h3>
+        <p class="img-card__price">&#8377;399 - &#8377;2999</p>
+      </div>
+    </div>
+    <div class="img-card">
+      <amp-img src="images/ttd/3.jpeg" alt="Welcome" height="420" width="700" layout="responsive"></amp-img>
+      <div class="img-card__content text-center">
+        <h3 class="img-card__heading">Romantic Dinner</h3>
+        <p class="img-card__price">&#8377;399 - &#8377;2999</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper card ">
+    <h3 class="text-center gray-darker">Buzzing hot-spot in Delhi</h3>
+    <div class="img-card">
+      <amp-img src="images/ttd/1.jpeg" alt="Welcome" height="420" width="700" layout="responsive"></amp-img>
+      <div class="img-card__content text-center">
+        <h3 class="img-card__heading">Hauz Khas</h3>
+        <p class="img-card__price">&#8377;399 - &#8377;2999</p>
+      </div>
+    </div>
+    <div class="img-card">
+      <amp-img src="images/ttd/2.jpeg" alt="Welcome" height="420" width="700" layout="responsive"></amp-img>
+      <div class="img-card__content text-center">
+        <h3 class="img-card__heading">Satya Niketan</h3>
+        <p class="img-card__price">&#8377;399 - &#8377;2999</p>
+      </div>
+    </div>
+    <div class="img-card">
+      <amp-img src="images/ttd/3.jpeg" alt="Welcome" height="420" width="700" layout="responsive"></amp-img>
+      <div class="img-card__content text-center">
+        <h3 class="img-card__heading">Saket</h3>
+        <p class="img-card__price">&#8377;399 - &#8377;2999</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper card">
+    <amp-carousel width="296" height="197" layout="responsive" type="slides">
+      <amp-img src="images/image1.jpg"
+          width="296"
+          height="197"  layout="responsive" ></amp-img>
+      <amp-img src="images/image2.jpg"
+          width="296"
+          height="197" layout="responsive" ></amp-img>
+      <amp-img src="images/image3.jpg"
+          width="296"
+          height="197"  layout="responsive" ></amp-img>
+    </amp-carousel>
+      
+      <h2>Samuel L. Lipsum</h2>
+      <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.</p>
+
+     
+      <amp-carousel height="330" layout="fixed-height" type="carousel">
+        <div class="article">
+          <amp-img src="images/image1.jpg"
+          width="296"
+          height="197"  layout="responsive" ></amp-img>
+          <div class="article__content">
+            <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero.</p>
+          </div>
+        </div>
+        <div class="article">
+          <amp-img src="images/image2.jpg"
+            width="296"
+            height="197" layout="responsive" ></amp-img>
+          <div class="article__content">
+            <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero.</p>
+          </div>
+        </div>
+        <div class="article">
+          <amp-img src="images/image3.jpg"
+          width="296"
+          height="197"  layout="responsive" ></amp-img>
+          <div class="article__content">
+            <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero.</p>
+          </div>
+        </div>
+      </amp-carousel>
+  </div>
+
+  <!-- <amp-list width=auto
+      height=100
+      layout=fixed-height
+      src="https://www.behance.net/v2/users/svsdesigns/projects?client_id=Up1roNu2wpr0SAWvLkMkaE8d2sS2KWE1&sort=featured_date">
+    <template type="amp-mustache"
+        id="amp-template-id">
+      <div>
+        <h1>{{title}}</h1>
+      </div>
+    </template>
+  </amp-list> -->
+
+  <amp-list width=auto
+      height=10
+      layout=fixed-height
+      src="https://api.behance.net/v2/users/matiascorea/projects?client_id=1234567890&__amp_source_origin="http://localhost:8000"
+      template="amp-template-id">
+    <div>
+      <button overflow
+          role=button
+          aria-label="Show more"
+          class="list-overflow">
+        Show more
+      </button>
+    </div>
+  </amp-list>
+  
+  
+
+  
+  </body>
+</html>
