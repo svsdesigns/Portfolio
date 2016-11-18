@@ -60,6 +60,10 @@
       .wrapper-lead {
         margin-bottom: 24px;
       }
+      .wrapper-hero {
+        margin-top: 40px;
+        margin-bottom: 24px;
+      }
       .card {
         border-radius: 3px;
         background-color: #fff;
@@ -538,7 +542,7 @@
       </div>
     </div>
   </div>
-  <div class="wrapper card">
+  <!-- <div class="wrapper card">
     <amp-carousel width="296" height="197" layout="responsive" type="slides">
       <amp-img src="images/image1.jpg"
           width="296"
@@ -581,24 +585,38 @@
           </div>
         </div>
       </amp-carousel>
-  </div>
+  </div> -->
 
-  <!-- <amp-list width=auto
+<div class="wrapper wrapper-hero">
+    
+  <h1 class="text-center gray-darker">Kya be?</h1>
+  <amp-list width=auto
       height=100
       layout=fixed-height
-      src="https://www.behance.net/v2/users/svsdesigns/projects?client_id=Up1roNu2wpr0SAWvLkMkaE8d2sS2KWE1&sort=featured_date">
+      src="http://localhost:8000/data.json">
     <template type="amp-mustache"
         id="amp-template-id">
-      <div>
-        <h1>{{title}}</h1>
+      <div class="img-card">
+        <!-- <amp-img src="{{urls.small}}" width="296" height="197" layout="responsive" ></amp-img> -->
+
+        <div class="img-card">
+          <amp-img src="{{urls.small}}" alt="Welcome" height="420" width="700" layout="responsive"></amp-img>
+          <div class="img-card__content text-center">
+            <h3 class="img-card__heading">{{user.name}}</h3>
+            <p class="img-card__price">@ {{user.username}}</p>
+          </div>
+        </div>
+
       </div>
     </template>
-  </amp-list> -->
+  </amp-list>
 
-  <amp-list width=auto
+</div>
+
+  <!-- <amp-list width=auto
       height=10
       layout=fixed-height
-      src="https://www.behance.net/v2/users/svsdesigns/projects?client_id=Up1roNu2wpr0SAWvLkMkaE8d2sS2KWE1&sort=featured_date&__amp_source_origin=http://svsdesigns.in"
+      src="https://api.unsplash.com/photos"
       template="amp-template-id">
     <div>
       <button overflow
@@ -608,7 +626,7 @@
         Show more
       </button>
     </div>
-  </amp-list>
+  </amp-list> -->
   
   
 
