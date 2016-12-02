@@ -12,6 +12,7 @@
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
@@ -211,9 +212,20 @@
         padding: 15px 6px;
         width: 100%;
         border: 0;
-        border-bottom: 1px solid #e0e0e0;
-        border-radius: 3px;
+        border-bottom: 2px solid #666;
+        /*border-radius: 3px;*/
         box-sizing: border-box;
+        font-size: 14px;
+        margin-top: 30px;
+        background-color: #f7f7f7;
+      }
+      .search-divider {
+        margin: 90px 0 12px;
+      }
+
+      .search-cat {
+        padding: 18px 16px;
+        text-align: center;
       }
 
       .row {
@@ -378,6 +390,16 @@
             margin-top: 12px;
     margin-bottom: 18px;
       }
+
+      #search-popup {
+        background-color: rgba(255,255,255,1);
+        width: 100%;
+        height: 100%;
+        padding: 24px 12px;
+        top: 100%;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+      }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
@@ -392,6 +414,7 @@
       on-load-remove-class="montserrat-loading"
       on-load-add-class="montserrat-loaded">
   </amp-font>
+
   <!-- Sidebar -->
   <amp-sidebar id='sidebar' layout='nodisplay'>
     
@@ -446,7 +469,7 @@
       <input type="text" name="" class="search" placeholder="Search restaurants, spa, events, things to do...">
     </form>
   </div>
-  <button class="search-target">
+  <button class="search-target" on="tap:search-popup" role="button" tabindex="0">
     <svg fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -463,19 +486,19 @@
           height="30"></amp-img>
           <p>Eat Out!</p>
       </div>
-       <div class="column">
+      <div class="column">
         <amp-img src="images/cat/artboard-4.svg"
           width="30"
           height="30"></amp-img>
           <p>Fitness</p>
       </div>
-       <div class="column">
+      <div class="column">
         <amp-img src="images/cat/artboard-10.svg"
           width="30"
           height="30"></amp-img>
           <p>Activities</p>
       </div>
-       <div class="column">
+      <div class="column">
         <amp-img src="images/cat/artboard-8.svg"
           width="30"
           height="30"></amp-img>
@@ -661,25 +684,74 @@
       </div>
     </template>
   </amp-list>
-
-
-
 </div>
 
-  <!-- <amp-list width=auto
-      height=10
-      layout=fixed-height
-      src="https://api.unsplash.com/photos"
-      template="amp-template-id">
-    <div>
-      <button overflow
-          role=button
-          aria-label="Show more"
-          class="list-overflow">
-        Show more
-      </button>
+<amp-lightbox id="search-popup"
+      layout="nodisplay">
+      <!-- on="tap:search-popup.close" -->
+    <div class="lightbox">
+      <h4 class="text-center">Search within "Delhi"</h3>
+      <form method="post" action="https://example.com/subscribe" target="_blank">
+        <input type="text" name="" class="search" placeholder="Find restaurants, spa, events, things to do...">
+      </form>
+
+      <!-- <h2 class="text-center search-divider">Not Sure?</h2> -->
+
+      <h4 class="text-center search-divider">Choose a category</h3>
+
+      <amp-carousel height="100" layout="fixed-height" type="carousel">
+        <div class="search-cat">
+          <amp-img src="images/cat/artboard-9.svg"
+            width="30"
+            height="30"></amp-img>
+            <p>Eat Out!</p>
+        </div>
+        <div class="search-cat">
+          <amp-img src="images/cat/artboard-4.svg"
+            width="30"
+            height="30"></amp-img>
+            <p>Fitness</p>
+        </div>
+        <div class="search-cat">
+          <amp-img src="images/cat/artboard-10.svg"
+            width="30"
+            height="30"></amp-img>
+            <p>Activities</p>
+        </div>
+        <div class="search-cat">
+          <amp-img src="images/cat/artboard-8.svg"
+            width="30"
+            height="30"></amp-img>
+            <p>Salon</p>
+        </div>
+        <div class="search-cat">
+          <amp-img src="images/cat/artboard-5.svg"
+            width="30"
+            height="30"></amp-img>
+            <p>Movies</p>
+        </div>
+        <div class="search-cat">
+          <amp-img src="images/cat/artboard-3.svg"
+            width="30"
+            height="30"></amp-img>
+            <p>Spa</p>
+        </div>
+        <div class="search-cat">
+          <amp-img src="images/cat/artboard-1.svg"
+            width="30"
+            height="30"></amp-img>
+            <p>Hobbies</p>
+        </div>
+        <div class="search-cat">
+          <amp-img src="images/cat/more.svg"
+            width="30"
+            height="30"></amp-img>
+            <p>More</p>
+        </div>
+      </amp-carousel>
     </div>
-  </amp-list> -->
+  </amp-lightbox>
+
   
   
 
