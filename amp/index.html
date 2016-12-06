@@ -188,6 +188,15 @@
         left: calc(100% - 15px);
       }
       
+      .btn-close{
+        background-color: transparent;
+        border: 0;
+      }
+      .btn-close svg {
+        vertical-align: middle;
+        width: 18px;
+        height: 18px;
+      }
       .search-target {
         background-color: #fff;
         width: 50px;
@@ -216,14 +225,20 @@
         border-radius: 3px;
         box-sizing: border-box;
         font-size: 13px;
-        margin-top: 30px;
         padding-left: 30px;
         /*background-color: #f7f7f7;*/
         background: url(images/icons/search.svg) no-repeat 6px center #f7f7f7;
+        border: 1px solid #e0e0e0;
         background-size: 20px;
+        transition: all 0.3s ease-out;
+      }
+      .search:focus {
+        outline: 0;
+        border-color: #666;
+        background-color: #fff;
       }
       .search-divider {
-        margin: 90px 0 12px;
+        margin: 96px 0 0;
       }
 
       .search-cat {
@@ -390,18 +405,52 @@
         font-size: 13px;
       }
       .wrapper-heading {
-            margin-top: 12px;
-    margin-bottom: 18px;
+        margin-top: 12px;
+        margin-bottom: 18px;
       }
 
       #search-popup {
         background-color: rgba(255,255,255,1);
         width: 100%;
         height: 100%;
-        padding: 24px 12px;
+        padding: 36px 12px;
         top: 100%;
         transition: all 0.3s ease;
         box-sizing: border-box;
+      }
+
+      #search-popup .btn-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+      }
+
+      /*Tag search*/
+      .tag-search {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+        padding: 0 6px;
+        margin-top: 20px;
+      }
+      .tag-search li {
+        display: inline-block;
+        margin-left: -4px;
+        margin-right: 12px;
+      }
+      .tag-search li a {
+        font-size: 11px;
+        background-color: #f1f1f1;
+        padding: 5px 12px 6px;
+        color: #666;
+        display: block;
+        border-radius: 20px;
+        text-decoration: none;
+        margin-bottom: 12px;
+        line-height: 1;
       }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -692,6 +741,13 @@
 <amp-lightbox id="search-popup"
       layout="nodisplay">
       <!-- on="tap:search-popup.close" -->
+    <button class="btn-close" on="tap:search-popup.close">
+      <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+      <!-- Close -->
+    </button>
     <div class="lightbox">
       <h4 class="text-center">Search within "Delhi"</h3>
       <form method="post" action="https://example.com/subscribe" target="_blank">
@@ -700,9 +756,9 @@
 
       <!-- <h2 class="text-center search-divider">Not Sure?</h2> -->
 
-      <h4 class="text-center search-divider">Top Selling Categories</h3>
+      <h4 class="text-center search-divider">Trending around you</h3>
 
-      <amp-carousel height="100" layout="fixed-height" type="carousel">
+      <!-- <amp-carousel height="100" layout="fixed-height" type="carousel">
         <div class="search-cat">
           <amp-img src="images/cat/artboard-9.svg"
             width="40"
@@ -751,7 +807,17 @@
             height="40"></amp-img>
             <p>More</p>
         </div>
-      </amp-carousel>
+      </amp-carousel> -->
+      <ul class="tag-search">
+        <li><a href="">food &amp; drinks</a></li>
+        <li><a href="">spa</a></li>
+        <li><a href="">salon</a></li>
+        <li><a href="">fitness</a></li>
+        <li><a href="">activities</a></li>
+        <li><a href="">eat out</a></li>
+        <li><a href="">movies</a></li>
+        <li><a href="">hobbies</a></li>
+      </ul>
     </div>
   </amp-lightbox>
 
