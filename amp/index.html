@@ -13,6 +13,8 @@
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <script async custom-element="amp-user-notification" src="https://cdn.ampproject.org/v0/amp-user-notification-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
@@ -119,13 +121,15 @@
         border: 0;
       }
       .header__location {
-        font-size: 13px;
+        font-size: 14px;
         color: #333;
         padding: 6px;
         font-weight: 500;
       }
       .header__location svg {
         vertical-align: middle;
+        width: 20px;
+        height: 20px;
       }
       .f-left {
         float:left;
@@ -403,6 +407,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
+        width: 100%;
       }
       .img-card__heading {
         text-shadow: 0 1px 3px rgba(0,0,0,0.5);
@@ -414,8 +419,8 @@
         margin-top: 12px;
         margin-bottom: 18px;
       }
-
-      #search-popup {
+      
+      .popup {
         background-color: rgba(255,255,255,1);
         width: 100%;
         height: 100%;
@@ -424,8 +429,11 @@
         transition: all 0.3s ease;
         box-sizing: border-box;
       }
+      #search-popup {
+        
+      }
 
-      #search-popup .btn-close {
+      .popup .btn-close {
         position: absolute;
         right: 0;
         top: 0;
@@ -458,11 +466,50 @@
         margin-bottom: 12px;
         line-height: 1;
       }
+
+      .metro-cities {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .metro-cities li {
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 30px;
+      }
+      .metro-cities li:last-child {
+        margin-right: 0;
+      }
+      .metro-cities a {
+        color: #333;
+        font-size: 11px;
+        text-decoration: none;
+      }
+      .metro-cities__img {
+        background-color: #f1f1f1;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        padding: 2px;
+      }
+      .metro-cities img {
+        display: block;
+        width; 100%;
+        max-width: 100%;
+      }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
 
   <body>
+
+  <amp-user-notification layout=nodisplay
+      id="amp-user-notification1">
+    This is an amp-user-notification. It uses local storage to store the dismissed state.
+    <button on="tap:amp-user-notification1.dismiss">I accept</button>
+  </amp-user-notification>
 
   <amp-font layout="nodisplay"
       font-family="montserrat"
@@ -501,12 +548,12 @@
             <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
         </svg>
       </button>
-      <button class="header__location f-right">
+      <button class="header__location f-right"  on="tap:location-popup" role="button" tabindex="0">
         <svg fill="#999" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
           <path d="M0 0h24v24H0z" fill="none"/>
         </svg>
-        Delhi/NCR
+        Bengaluru
       </button>
 
     </div>
@@ -722,16 +769,16 @@
 <div class="wrapper wrapper-hero">
     
   <h1 class="text-center gray-darker">दिसम्बर to Remember</h1>
-  <amp-list width=auto
+  <!-- <amp-list width=auto
       height=100
       layout=fixed-height
       src="//svsdesigns.in/amp/data.json">
     <template type="amp-mustache"
         id="amp-template-id">
-      <div class="img-card">
+      <div class="img-card"> -->
         <!-- <amp-img src="{{urls.small}}" width="296" height="197" layout="responsive" ></amp-img> -->
 
-        <div class="img-card">
+        <!-- <div class="img-card">
           <amp-img src="{{urls.small}}" alt="Welcome" height="420" width="700" layout="responsive"></amp-img>
           <div class="img-card__content text-center">
             <h3 class="img-card__heading">{{user.name}}</h3>
@@ -741,10 +788,10 @@
 
       </div>
     </template>
-  </amp-list>
+  </amp-list> -->
 </div>
 
-<amp-lightbox id="search-popup"
+<amp-lightbox class="popup" id="search-popup"
       layout="nodisplay">
       <!-- on="tap:search-popup.close" -->
     <button class="btn-close" on="tap:search-popup.close">
@@ -823,6 +870,74 @@
         <li><a href="">eat out</a></li>
         <li><a href="">movies</a></li>
         <li><a href="">hobbies</a></li>
+      </ul>
+    </div>
+  </amp-lightbox>
+
+  <amp-lightbox class="popup" id="location-popup"
+      layout="nodisplay">
+      <!-- on="tap:search-popup.close" -->
+    <button class="btn-close" on="tap:location-popup.close">
+      <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+      <!-- Close -->
+    </button>
+    <div class="lightbox">
+      <h4 class="text-center">Popular Cities</h3>
+      <form method="post" action="https://example.com/subscribe" target="_blank">
+        <input type="search" name="" class="search" placeholder="Search your city (e.g. Bangalore)">
+      </form>
+      
+      
+
+      <!-- <h2 class="text-center search-divider">Not Sure?</h2> -->
+
+      <h4 class="text-center search-divider">Popular Cities</h3>
+      <!-- <ul class="tag-search">
+        <li><a href="">food &amp; drinks</a></li>
+        <li><a href="">spa</a></li>
+        <li><a href="">salon</a></li>
+        <li><a href="">fitness</a></li>
+        <li><a href="">activities</a></li>
+        <li><a href="">eat out</a></li>
+        <li><a href="">movies</a></li>
+        <li><a href="">hobbies</a></li>
+      </ul> -->
+      <ul class="metro-cities">
+        <li>
+          <a href="#">
+          <div class="metro-cities__img">
+            <img src="images/icons/delhi.png">
+          </div>
+          Delhi
+          </a>
+        </li>
+        <li>
+            <a href="#">
+              <div class="metro-cities__img">
+                <img src="images/icons/mumbai.png">
+              </div>
+              Mumbai
+            </a>
+        </li>
+        <li>
+          <a href="#">
+              <div class="metro-cities__img">
+                <img src="images/icons/kolkata.png">
+              </div>
+              Kolkata
+            </a>
+        </li>
+        <li>
+          <a href="#">
+              <div class="metro-cities__img">
+                <img src="images/icons/chennai.png">
+              </div>
+              Chennai
+            </a>
+        </li>
       </ul>
     </div>
   </amp-lightbox>
