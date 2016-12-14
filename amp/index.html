@@ -499,6 +499,27 @@
         width; 100%;
         max-width: 100%;
       }
+      .geo-location {
+        background-color: #f7f7f7;
+        border: 0;
+        display: block;
+        width: 100%;
+        margin-top: 18px;
+        border-radius: 4px;
+        padding: 6px 12px 1px;
+        color: #2dbaaa;
+        border: 1px solid #2dbaaa;
+      }
+      .geo-location__icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 6px;
+      }
+      .geo-location__desc {
+        display: inline-block;
+        font-size: 13px;
+        line-height: 1;
+      }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
@@ -885,11 +906,19 @@
       <!-- Close -->
     </button>
     <div class="lightbox">
-      <h4 class="text-center">Popular Cities</h3>
+      <h4 class="text-center">Where are you?</h3>
       <form method="post" action="https://example.com/subscribe" target="_blank">
         <input type="search" name="" class="search" placeholder="Search your city (e.g. Bangalore)">
       </form>
-      
+      <button class="geo-location text-center">
+        <div class="geo-location__icon">
+          <svg fill="#2dbaaa" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0h24v24H0z" fill="none"/>
+              <path d="M20.94 11c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+          </svg>
+        </div>
+        <p class="geo-location__desc">Tap to use your current location</p>
+      </button>
       
 
       <!-- <h2 class="text-center search-divider">Not Sure?</h2> -->
