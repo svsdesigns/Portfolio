@@ -231,18 +231,19 @@
         padding: 15px 6px;
         width: 100%;
         border: 0;
-        /*border-bottom: 2px solid #666;*/
+        /* border-bottom: 2px solid #666; */
         border-radius: 3px;
         box-sizing: border-box;
         font-size: 13px;
         padding-left: 30px;
-        /*background-color: #f7f7f7;*/
-        background: url(images/icons/search.svg) no-repeat 6px 16px #f7f7f7;
+        /* background-color: #f7f7f7; */
+        background: url(images/icons/search.svg) no-repeat 6px 16px transparent;
         border: 1px solid #e0e0e0;
         background-size: 18px;
         transition: all 0.3s ease-out;
         position: relative;
         z-index: 1;
+        border-bottom: 0;
       }
       .search:focus {
         outline: 0;
@@ -508,11 +509,16 @@
         width: 100%;
         margin-top: -2px;
         /* border-radius: 4px; */
-        padding: 9px 12px 2px 6px;
-        color: #5ba4da;
+        padding: 8px 12px 1px 6px;
+        line-height: 1;
+        color: #237cff;
         /* border: 1px solid #2dbaaa; */
         z-index: 0;
         text-align: left;
+        background-color: #f7f7f7;
+        border: 1px solid #e0e0e0;
+        border-radius: 0 0 4px 4px;
+        border-top-width: 2px;
       }
       .geo-location__icon {
         display: inline-block;
@@ -565,7 +571,7 @@
       <li>Cashback</li>
     </ul>
   </amp-sidebar>
-  
+
   <div class="header-wrapper">
     <div class="header">
       <button class="header__menu f-left" on='tap:sidebar.toggle'>
@@ -917,7 +923,7 @@
       </form>
       <button class="geo-location text-center">
         <div class="geo-location__icon">
-          <svg fill="#5ba4da" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+          <svg fill="#237cff" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 0h24v24H0V0z" fill="none"/>
               <path d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"/>
           </svg>
