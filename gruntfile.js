@@ -47,7 +47,7 @@
 			},
 			build: {
 				files: {
-					'app/lib/500px.min.js': ['500px/500px.js'],
+					//'app/lib/500px.min.js': ['500px/500px.js'],
 					'app/lib/modules.min.js': ['app/modules/*']
 				}
 			}
@@ -87,7 +87,7 @@
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task(s).
-	grunt.registerTask('default', ['sass', 'cmq', 'cssmin', 'uglify', 'concat', 'jshint']);
+	grunt.registerTask('default', ['uglify', 'concat', 'jshint']);
 	//grunt.registerTask('default', ['sass', 'cmq', 'cssmin', /*'concat',*/ 'jshint', 'uglify']);
 
 };
