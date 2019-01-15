@@ -1,8 +1,8 @@
 (function () {
 
-    angular.module('folio', ['ngRoute', 'ngAnimate', 'modResume', 'modPhotos', 'modWeb', 'modHome'])
+    angular.module('folio', ['ngRoute', 'ngAnimate', 'modResume', 'modWeb', 'modHome'])
 
-        .run(['$rootScope', '$window', '$location', '$routeParams', 'Behance', 'FiveHundred', function ($rootScope, $window, $location, $routeParams, Behance, FiveHundred) {
+        .run(['$rootScope', '$window', '$location', '$routeParams', 'Behance', function ($rootScope, $window, $location, $routeParams, Behance) {
             //console.log('run');
             $rootScope.$on('$routeChangeSuccess', function (newRoute, oldRoute) {
                  check.hashPath = $location.path();
@@ -14,12 +14,12 @@
         window.onload = function () {
             Behance.getProjects();
 
-            FiveHundred.getPhotos(function (fhPx) {
+            /*FiveHundred.getPhotos(function (fhPx) {
                 if (fhPx.success) {
                 } else {
                     alert('Unable to complete request: ' + fhPx.status + ' - ' + fhPx.error_message);
                 }
-            });
+            });*/
 
         };
     }])
@@ -87,9 +87,9 @@
     }
 
     // 500px key for ajax request
-    _500px.init({
+    /*_500px.init({
         sdk_key: 'b3cf6701a6a5014444ee58f00fa11afd54ae6356'
-    });
+    });*/
 
     // Checking for touch devices
     var is_touch_device = (function is_touch_device() {
